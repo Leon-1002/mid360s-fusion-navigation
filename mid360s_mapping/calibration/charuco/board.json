@@ -1,0 +1,47 @@
+{
+  "board_id": "mid360s-charuco-5x7-30mm-A4-v1",
+  "type": "charuco",
+  "dictionary": "DICT_4X4_50",
+  "squares_x": 5,
+  "squares_y": 7,
+  "square_length_m": 0.03,
+  "marker_length_m": 0.021,
+  "marker_border_bits": 1,
+  "marker_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "legacy_pattern": false,
+  "top_left_square": "black",
+  "charuco_corner_count": 24,
+  "board_size_mm": [
+    150,
+    210
+  ],
+  "paper_size_mm": [
+    210,
+    297
+  ],
+  "board_origin": "top-left chessboard corner, x right, y down",
+  "print_scale_percent": 100,
+  "check_lines_mm": {
+    "horizontal": 100,
+    "vertical": 100
+  },
+  "generator_opencv_version": "5.0.0"
+}

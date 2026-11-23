@@ -1,0 +1,5 @@
+# Versions used to generate and validate v1. OpenCV 5 includes aruco in this wheel.
+opencv-python==5.0.0.93
+numpy==2.5.1
+reportlab==5.1.0
+PyMuPDF==1.28.2

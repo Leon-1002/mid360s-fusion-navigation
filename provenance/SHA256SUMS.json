@@ -1286,8 +1286,8 @@
   },
   {
     "path": "README.md",
-    "bytes": 4471,
-    "sha256": "60c5cf1715a09c0fa7047a9ce64816c7c29cdb370a3cfc557b23286f1e91c5f3"
+    "bytes": 5094,
+    "sha256": "656096b3bb4a2f3e9b6930c204ead065d8333a1956a1947a0b20d33f30358d31"
   },
   {
     "path": "wsl/mid360s_lio/sdk/.gitignore",
@@ -3253,5 +3253,50 @@
     "path": "wsl/mid360s_lio/src/livox_ros_driver2/src/parse_cfg_file/parse_livox_lidar_cfg.h",
     "bytes": 2018,
     "sha256": "1d5b9f606deedb7c78e1a6d0c3c10d62a886fcc2aac1ac42e1a4a1ae6a9b6d49"
+  },
+  {
+    "path": "mid360s_mapping/calibration/charuco/.gitattributes",
+    "bytes": 26,
+    "sha256": "9618185d97a7b73972851bc179ac276080c298f79adbc1847951e647f4254c27"
+  },
+  {
+    "path": "mid360s_mapping/calibration/charuco/.gitignore",
+    "bytes": 20,
+    "sha256": "e99f6ee4eb88882ea6589ecb717e10a41401763241b246b6821bc091cfe2227e"
+  },
+  {
+    "path": "mid360s_mapping/calibration/charuco/board.json",
+    "bytes": 793,
+    "sha256": "f83f98d1a3acd3e76322a448b158cd850dd5788b772fd51babaebfc4a6284958"
+  },
+  {
+    "path": "mid360s_mapping/calibration/charuco/generate_board.py",
+    "bytes": 5932,
+    "sha256": "ffa7e6f911c41b166c6f2c0dd706569a2fbcc79e5798047447c878cb04022e80"
+  },
+  {
+    "path": "mid360s_mapping/calibration/charuco/README.md",
+    "bytes": 3184,
+    "sha256": "7086c3d0ae04c89e73cabdc359f9d4f7d781e6b90ccca9f2b0b1a19521d83c86"
+  },
+  {
+    "path": "mid360s_mapping/calibration/charuco/requirements.txt",
+    "bytes": 154,
+    "sha256": "e83e53b634dd7847f560b483501a2fc3806503caaecf3c85351b159c59ebcd1b"
+  },
+  {
+    "path": "mid360s_mapping/calibration/charuco/validation.json",
+    "bytes": 437,
+    "sha256": "adbec75dd43035fb834a9160758ba9ed98c0412c834a6cab2a19815d921c8f4f"
+  },
+  {
+    "path": "mid360s_mapping/calibration/charuco/output/pdf/mid360s-charuco-5x7-30mm-A4-v1-preview.png",
+    "bytes": 71244,
+    "sha256": "25c576360e862266d323789720411ea3e54c504a4a2879c7fc5b918942958172"
+  },
+  {
+    "path": "mid360s_mapping/calibration/charuco/output/pdf/mid360s-charuco-5x7-30mm-A4-v1.pdf",
+    "bytes": 3247,
+    "sha256": "8f4030097869258413a37aa635223a02c9c786607794e1f2ab3f355465e92042"
   }
 ]

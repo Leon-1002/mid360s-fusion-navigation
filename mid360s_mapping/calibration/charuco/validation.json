@@ -1,0 +1,15 @@
+{
+  "result": "PASS",
+  "page_count": 1,
+  "page_size_mm": [
+    210,
+    297
+  ],
+  "detected_markers": 17,
+  "detected_charuco_corners": 24,
+  "render_dpi": 300,
+  "max_corner_position_error_px": 0.8778605361410547,
+  "check_lines_100mm": 2,
+  "pdf_sha256": "8f4030097869258413a37aa635223a02c9c786607794e1f2ab3f355465e92042",
+  "note": "Digital file validation only; measure both 100 mm bars after physical printing."
+}
