@@ -1,0 +1,9 @@
+TriggerMode=Off
+AcquisitionMode=Continuous
+AcquisitionFrameRateEnable=0
+AcquisitionFrameRate=60
+ExposureAuto=Off
+ExposureTime=10000
+GainAuto=Off
+GainRaw=1
+DeviceLinkThroughputLimit=400000000
