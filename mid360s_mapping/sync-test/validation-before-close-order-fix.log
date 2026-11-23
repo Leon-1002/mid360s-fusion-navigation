@@ -1,0 +1,26 @@
+test_bad_checksums_lengths (__main__.SyncTests.test_bad_checksums_lengths) ... ok
+test_cadence_and_reset (__main__.SyncTests.test_cadence_and_reset) ... ok
+test_configuration_allowlist (__main__.SyncTests.test_configuration_allowlist) ... ok
+test_data_crc (__main__.SyncTests.test_data_crc) ... ok
+test_full_bench_loop_with_emulated_devices (__main__.SyncTests.test_full_bench_loop_with_emulated_devices)
+Real localhost UDP + timed fake UART; also checks config rollback. ... ERROR
+test_real_udp_loopback_ack (__main__.SyncTests.test_real_udp_loopback_ack) ... ok
+test_rmc (__main__.SyncTests.test_rmc) ... ok
+test_sdk_golden (__main__.SyncTests.test_sdk_golden) ... ok
+test_status_bounds (__main__.SyncTests.test_status_bounds) ... ok
+
+======================================================================
+ERROR: test_full_bench_loop_with_emulated_devices (__main__.SyncTests.test_full_bench_loop_with_emulated_devices)
+Real localhost UDP + timed fake UART; also checks config rollback.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\chatgpt_project\mid360s_mapping\sync-test\test_sync.py", line 123, in test_full_bench_loop_with_emulated_devices
+    execute(argparse.Namespace(mode='sync',host='127.0.0.1',lidar='127.0.0.2',port='FAKE',seconds=15),
+  File "E:\chatgpt_project\mid360s_mapping\sync-test\run_sync.py", line 215, in execute
+    raise RuntimeError('Restore failed; see stream_config_before in events.jsonl. Do not resume mapping yet.')
+RuntimeError: Restore failed; see stream_config_before in events.jsonl. Do not resume mapping yet.
+
+----------------------------------------------------------------------
+Ran 9 tests in 15.932s
+
+FAILED (errors=1)

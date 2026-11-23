@@ -28,6 +28,7 @@ struct Camera {
     check(IMV_GetEnumFeatureSymbol(h, name, &old), std::string("read ") + name);
     std::string saved = old.str;
     snapshot << name << '=' << saved << '\n'; snapshot.flush();
+    if (saved == value) return; // Some selected lines expose an already-correct read-only mode.
     check(IMV_SetEnumFeatureSymbol(h, name, value), std::string("set ") + name);
     restore.push_back([this, name, saved] { if (IMV_SetEnumFeatureSymbol(h,name,saved.c_str())) std::cerr << "Restore failed: " << name << '\n'; });
   }
@@ -62,6 +63,9 @@ int main(int argc, char **argv) {
     const double exposure = node->declare_parameter<double>("exposure_us",10000.0);
     const double gain = node->declare_parameter<double>("gain",4.0);
     const bool hardware_trigger = node->declare_parameter<bool>("hardware_trigger",false);
+    const auto trigger_source = node->declare_parameter<std::string>("trigger_source","Line1");
+    if (hardware_trigger && trigger_source != "Line1" && trigger_source != "Line2")
+      throw std::runtime_error("trigger_source must be Line1 or Line2");
     const int expected_frames = node->declare_parameter<int>("expected_frames",0);
     if (rate <= 0 || rate > 60 || seconds < 0) throw std::runtime_error("invalid fps or seconds");
     if (expected_frames < 0 || (expected_frames > 0 && !hardware_trigger))
@@ -87,7 +91,20 @@ int main(int argc, char **argv) {
     if(hardware_trigger) {
       camera.set_enum("TriggerSelector","FrameStart",snapshot);
       camera.set_enum("TriggerMode","Off",snapshot);
-      camera.set_enum("TriggerSource","Line1",snapshot);
+      if (trigger_source == "Line2") {
+        camera.set_enum("LineSelector","Line2",snapshot);
+        camera.set_enum("LineMode","Input",snapshot);
+        bool inverted = false;
+        check(IMV_GetBoolFeatureValue(camera.h,"LineInverter",&inverted),"read Line2 inverter");
+        snapshot << "Line2.LineInverter=" << inverted << '\n'; snapshot.flush();
+        if (inverted) {
+          check(IMV_SetBoolFeatureValue(camera.h,"LineInverter",false),"disable Line2 inverter");
+          camera.restore.push_back([&camera] {
+            if (IMV_SetBoolFeatureValue(camera.h,"LineInverter",true)) std::cerr << "Restore Line2 inverter failed\n";
+          });
+        }
+      }
+      camera.set_enum("TriggerSource",trigger_source.c_str(),snapshot);
       camera.set_enum("TriggerActivation","RisingEdge",snapshot);
     }
     camera.set_enum("AcquisitionMode","Continuous",snapshot);
@@ -132,7 +149,8 @@ int main(int argc, char **argv) {
     uint64_t count=0, report_count=0, gaps=0, previous=0, timeouts=0;
     double wait_total=0, publish_total=0, display_total=0;
     if(hardware_trigger)
-      std::cout << "READY: FrameStart / Line1 / RisingEdge. Press STM32 RESET once. Expected frames="
+      std::cout << "READY: FrameStart / " << trigger_source
+                << " / RisingEdge. Press STM32 RESET once. Expected frames="
                 << expected_frames << std::endl;
     while(rclcpp::ok()) {
       if(preview) {

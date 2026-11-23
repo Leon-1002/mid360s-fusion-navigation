@@ -1,4 +1,5 @@
-param([switch]$HardwareTrigger)
+param([switch]$HardwareTrigger,
+      [ValidateSet('Line1','Line2')][string]$TriggerSource='Line2')
 $ErrorActionPreference = 'Stop'
 # Keep WSL alive while usbipd negotiates. This helper exits after 60 seconds;
 # once capture starts the camera process itself keeps the distribution running.
@@ -15,7 +16,7 @@ if (-not $camera[0].ClientIPAddress) {
 }
 $captureArguments = @('--ros-args', '-p', 'exposure_us:=30000.0', '-p', 'gain:=2.0')
 if ($HardwareTrigger) {
-    $captureArguments += @('-p', 'hardware_trigger:=true', '-p', 'expected_frames:=10', '-p', 'seconds:=180.0')
+    $captureArguments += @('-p', 'hardware_trigger:=true', '-p', "trigger_source:=$TriggerSource", '-p', 'expected_frames:=10', '-p', 'seconds:=180.0')
 }
 & wsl.exe -d Ubuntu-22.04 -- bash /mnt/e/chatgpt_project/mid360s_mapping/camera/run-camera.sh @captureArguments
 if ($LASTEXITCODE -ne 0) { throw 'Camera acquisition failed; see latest capture console.log.' }

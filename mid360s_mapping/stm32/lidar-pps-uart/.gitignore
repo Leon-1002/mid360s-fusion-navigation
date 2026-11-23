@@ -1,0 +1,6 @@
+build/
+build-keil/
+DebugConfig/
+*_Sequences/
+*.uvguix.*
+*.uvoptx

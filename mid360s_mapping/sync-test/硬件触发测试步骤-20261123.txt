@@ -1,0 +1,107 @@
+硬件触发与雷达同步：现场执行清单（2026-11-23）
+
+本轮按两项独立测试执行，均不运行 FAST-LIO 建图。
+相机：十个 PA1 脉冲对应十帧。
+雷达：PB5 PPS + PA9 串口秒值，经电脑转成以太网同步命令。
+相机十帧通过不等于雷达已同步；两项分别通过也不等于联合时间戳已验收。
+
+一、用户需要完成的实物准备
+
+1. 相机使用新到的匹配六孔母头线。以你确认的新线标签为准：
+   1 红：本轮不接；相机继续 USB 供电。
+   2 白：Line1，本轮不接。
+   3 棕：Line2 -> STM32 A1 / PA1。
+   4 绿：Line0 输出，本轮不接。
+   5 黄：ISO_GND，本轮 Line2 测试不接。
+   6 黑：GPIO GND -> STM32 GND。
+   这里只指标签对应的六根芯线；额外屏蔽线不能代替 6 脚。
+
+2. 雷达沿用你确认的功能线，不套用厂家其他线缆颜色：
+   黄 Pin8 PPS -> STM32 B5 / PB5。
+   黑 Pin2/3 GND -> STM32 GND。
+   白 Pin10 GPS 输入不接；绿 Pin11、红 Pin12 不接，分别绝缘。
+   红 Pin12 不是供电正极。雷达保持既有独立供电和网线连接。
+
+3. USB 转 TTL（3.3 V 逻辑电平）：
+   STM32 A9 / PA9 TX -> 模块 RXD；STM32 GND -> 模块 GND。
+   模块 USB 接 Windows 电脑；模块 TXD、VCC 本轮不接。
+   保持 STM32 之前已验证的供电方式；5 V 不能接到 PB5/PA9 等信号线上。
+   ST-LINK 用于烧录，不代替串口模块。
+   曾出现过 CP210x COM18，但本次检查它不在线，不能固定认定现在仍为 COM18。
+
+4. 断电接线。接好后连接相机 USB 3.0、ST-LINK、USB 转 TTL；雷达保持既有网卡留在 Windows。
+   相机线缆通过 USB 转发至 WSL；串口模块本轮留在 Windows，不用 usbipd 转发。
+   停止建图、ROS 雷达驱动、录包；退出 Livox Viewer/MVviewer，避免设备占用。
+
+二、相机十脉冲验收
+
+1. Keil 打开：
+   E:\chatgpt_project\mid360s_mapping\stm32\camera-pulse-test\camera-pulse-test.uvprojx
+   F7 编译，然后 Flash -> Download；以 Programming Done / Verify OK 为烧录成功。
+   BOOT0 保持 0。退出调试，确保程序处于运行状态。
+   如果出现设备不匹配/下载错误，保留报错；不要临时修改芯片型号、读保护或整片擦除。
+
+2. 双击：
+   E:\chatgpt_project\mid360s_mapping\camera\开始相机Line2触发测试.cmd
+   该入口选择 FrameStart / Line2 / Input / RisingEdge，保留曝光 30 ms、增益 2.0。
+   参数在正常退出时恢复，修改前值存入会话 settings-before.txt。
+   不要仅打开 MVviewer 或切换软触发来替代此验收。
+
+3. 等终端出现 READY: FrameStart / Line2 / RisingEdge，再按 STM32 RESET 一次。
+   复位后约 0.99 秒开始，PA1 输出十个 1 Hz、10 ms 高电平脉冲，随后保持低。
+   脉冲组完成后等待约 3 秒；期望 BATCH COUNT PASS: 10 frames, consecutive IDs。
+   会话目录有 console.log、frames.csv、settings-before.txt。
+   无帧/少帧/帧号缺口都不能算通过。默认超时 180 秒。
+   若相机无法枚举，先检查 USB 连接/占用，不反复改曝光或强制绑定。
+
+三、雷达 PPS 与秒值验收
+
+1. 相机测试结束后，Keil 打开另一个工程：
+   E:\chatgpt_project\mid360s_mapping\stm32\lidar-pps-uart\lidar-pps-uart.uvprojx
+   本轮已生成 build-keil\lidar-pps-uart.hex，Keil 构建 0 Error(s), 0 Warning(s)。
+   烧录后验证成功，退出调试，让程序运行。
+   注意：这会替换相机测试固件；此雷达测试固件的 PA1 固定低，不触发相机。
+
+2. 双击：
+   E:\chatgpt_project\mid360s_mapping\sync-test\开始雷达同步测试.cmd
+   先选 1：串口检查。正常应每秒一条 GPRMC，连续性检查通过，60 秒后 SERIAL_PASS。
+   仅有一个 USB 串口时自动选择；多个串口时可以指定：
+   powershell -ExecutionPolicy Bypass -File E:\chatgpt_project\mid360s_mapping\sync-test\start.ps1 -Mode serial -Port COM18
+   COM18 只是历史示例，按实际枚举端口替换。
+
+3. 再运行菜单选 2：只读查询雷达状态，不下发秒值；期望 NETWORK_QUERY_PASS。
+   Windows 网卡应保持 192.168.1.50，雷达 192.168.1.119。
+   若端口占用，先正常关闭冲突程序；脚本不杀进程。
+
+4. 选 3 前给雷达断电再上电一次，确保不沿用上次更晚的测试时间；不运行 PTP 主时钟。
+   等雷达启动完毕，再选 3 运行 60 秒。同步过程中不要按 STM32 RESET、拔串口或启动建图。
+   程序读取并落盘保存点云/IMU目的地址、IMU使能和目标工作模式，仅临时配置测试数据流，
+   退出时逐项恢复并读回核对；不改雷达 IP、扫描参数或时间过滤策略。
+   断电、强制结束进程或断网可能阻止恢复，必须检查日志中的 stream_restore。
+
+5. 输出结果解释：
+   BENCH_SYNC_PASS：连续至少十次同步状态与当前秒值匹配，时间命令有 ACK；点云和 IMU
+                   都有至少百个 GPS 类型数据包，CRC 合格、无所观测到的倒退、秒值范围匹配。
+                   这是台架数据链路验收，不是微秒级相位精度或真实 UTC 的认证。
+   STATUS_PASS_DATA_PENDING：同步状态有证据，但点云/IMU证据不足，不能算整体通过。
+   FAILED / INCOMPLETE / RESTORE_FAILED：按日志继续定位，不降低验收标准。
+   所有结果在 sync-test\sessions\日期时间\summary.json 和 events.jsonl。
+
+6. 测试结束：先退出测试程序，再给雷达断电重启，确认配置恢复后恢复原建图流程。
+   合成时间从 2026-11-23 00:00:00 开始，每次 MCU 重启都回到起点；不要直接和电脑墙钟、
+   相机 host_receive 时间比较。未来 RTK 的有效 UTC/PPS 接入是单独阶段。
+
+四、已由助手完成的准备与边界
+
+- 独立 PPS/RMC 固件：PB5 1 Hz、100 ms 高电平；PA9 9600/8N1，紧随 PPS 发送对应秒值。
+  外部晶振未启动时停止输出并报错；PA1 禁用；不用 WFI，保留 SWD 可访问性。
+- 相机入口已支持 Line2，显式配置 Input、关闭反相、上升沿；保留自由采集入口和参数。
+- Python 串口依赖安装在 sync-test\.venv；没有修改全局 Python 环境。
+- 秒值转发按 SDK2 官方协议实现；实际 SDK2 C++ 生成包与 Python 包逐字节一致。
+- Keil 固件构建通过；RMC 日期/闰年/校验测试通过；本地模拟串口+UDP完整流程与配置恢复测试通过。
+- 本次尚未烧录新固件，尚未获得真实雷达同步或相机触发帧；设备接好后才能实测。
+- 本轮先分别验收，再合并相机与 PPS 固件，验证相位及统一时间戳。不要把不同固件混用。
+
+依据：原作 https://github.com/xuankuzcr/LIV_handhold
+协议：https://livox-wiki-en.readthedocs.io/en/latest/tutorials/new_product/mid360/livox_eth_protocol_mid360.html
+时间同步：https://github.com/Livox-SDK/livox_wiki_en/blob/master/source/tutorials/new_product/common/time_sync.rst
