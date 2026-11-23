@@ -1,0 +1,32 @@
+{
+  "result": "PASS",
+  "topics": {
+    "/camera/image_raw/compressed": {
+      "count": 151,
+      "first": 9046.588229226,
+      "last": 9076.58957405,
+      "nonincreasing_stamps": 0,
+      "invalid_images": 0,
+      "max_interval_s": 0.44735984100043424,
+      "last_stamp_ns": 1795435670467333114,
+      "received_hz": 4.999775872713621,
+      "duration_s": 30.001344824000626
+    },
+    "/camera/image_raw": {
+      "count": 149,
+      "first": 9046.688534004,
+      "last": 9076.722692417,
+      "nonincreasing_stamps": 0,
+      "invalid_images": 0,
+      "max_interval_s": 0.44708627999898454,
+      "width": 3072,
+      "height": 2048,
+      "encoding": "bayer_rggb8",
+      "bytes": 6291456,
+      "last_stamp_ns": 1795435670667499515,
+      "received_hz": 4.927722560587516,
+      "duration_s": 30.034158413000114
+    }
+  },
+  "scope": "Orin local raw+JPEG ROS delivery; host receive timestamps; no synchronization claim"
+}

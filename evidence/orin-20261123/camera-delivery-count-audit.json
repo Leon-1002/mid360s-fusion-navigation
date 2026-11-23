@@ -1,0 +1,21 @@
+{
+  "result": "COUNT_FAIL",
+  "topics": {
+    "/camera/image_raw": {
+      "sdk_frames_in_stamp_range": 151,
+      "received": 149,
+      "missing": 2,
+      "nonincreasing_stamps": 0,
+      "invalid_images": 0
+    },
+    "/camera/image_raw/compressed": {
+      "sdk_frames_in_stamp_range": 151,
+      "received": 151,
+      "missing": 0,
+      "nonincreasing_stamps": 0,
+      "invalid_images": 0
+    }
+  },
+  "delivery_json": "camera-delivery-steady.json",
+  "frames_csv": "capture-20261123-200833-K6BU\\frames.csv"
+}

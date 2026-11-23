@@ -8,4 +8,4 @@ session=$(mktemp -d "$CAMERA_DIR/capture-$(date +%Y%m%d-%H%M%S)-XXXX")
 cd "$session"
 echo "Camera session: $session"
 echo 'Camera acquisition. Header timestamp = host receive time; see node log for trigger mode.'
-"$CAMERA_DIR/build/zm_camera" "$@" 2>&1 | tee console.log
+"$CAMERA_BUILD_DIR/zm_camera" "$@" 2>&1 | tee console.log

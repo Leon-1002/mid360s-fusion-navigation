@@ -1,0 +1,2 @@
+Runtime check PASS: ROS node and OpenCV initialized; SDK=/proc/modules u3v_drv not exist
+V2.3.2.194984; no camera opened

@@ -1,5 +1,32 @@
 # ZM-3000-60UC USB / ROS 2 接入
 
+## 2026-11-23 Orin ARM64 适配（优先于下方历史状态）
+
+x86 源码基线和原始 SDK 已归档到私有仓库的 [camera-x86-baseline-20261123 Release](https://github.com/Leon-1002/mid360s-fusion-navigation/releases/tag/camera-x86-baseline-20261123)。该标签固定在修改前的 `65ebf6f`。本地修改前备份为 `before-arm64-20261123/`。
+
+同一套脚本现在按 `uname -m` 选择 SDK，并校验 ELF64 机器架构，拒绝混用：
+
+| 运行平台 | 解压目录 | 实际库目录 | 构建目录 |
+|---|---|---|---|
+| x86_64 / WSL | `vendor/extracted` | `lib/m64x86` | `build` |
+| aarch64 / Orin | `vendor/arm64/extracted` | `lib/Jetson_TX1` | `build-aarch64` |
+
+`Jetson_TX1` 是厂家包内原始目录名，不代表本机型号。实测机载机为 Jetson AGX Orin，JetPack 6.2.2 / L4T 36.5.0，Ubuntu 22.04.5。ARM64 包来自 [厂家服务器](http://download.huaraytech.com/pub/sdk/Ver2.3.2/Linux/Arm/MVviewer_Ver2.3.2_Linux_arm_aarch64_Build20220402.zip)，本地计算 SHA256 为 `e48e52802d65fdf8d1f67c2e0077bcf106eab2beaccf824db7dd369bbfc4d955`；实际 SDK 返回 `V2.3.2.194984`。x86 SDK 保持 `V2.3.2.194985`。
+
+只用 `.run --noexec --nox11 --nochown --target ...` 解压用户态库，没有执行厂家 `install.sh`、安装旧内核模块或覆盖 `/opt/MVS`。厂家旧说明书的 Jetson/内核支持范围早于本机，因此必须以分阶段实测为准。
+
+两端均已实际执行 `bash build.sh` 和 `bash check-runtime.sh` 并通过。后者验证依赖库、SDK 加载及 ROS/OpenCV 初始化，不打开相机。ARM64 机载实机采集已完成：两次40秒各200帧，SDK帧号无缺口、无超时。稳定段ROS raw约4.926Hz，JPEG约4.993Hz；同区间SDK/JPEG151帧、raw149帧，原始图像无丢帧验收未通过。此前 Windows 原生联合测试的 300 脉冲 / 300 帧通过，不能替代 Orin 硬同步实测。
+
+完整可复刻步骤、USB权限、SDK校验、采集和雷达构建见 [Orin移植README](../onboard/README.md)。
+
+Orin 上程序位于 `/home/door/mid360s_orin_20261123/camera`。接好相机后的无窗口、限时自由采集命令：
+
+```bash
+bash /home/door/mid360s_orin_20261123/camera/run-camera.sh --ros-args -p preview:=false -p seconds:=30.0 -p fps:=5.0 -p exposure_us:=30000.0 -p gain:=2.0
+```
+
+头时间仍取主机收帧时刻，尚未统一到硬件触发时基。Line2 的 `TriggerActivation` 设置顺序已按实机结果调整为先开启 TriggerMode，再设置 RisingEdge；自由采集入口保留。
+
 ## 2026-11-23 更新（优先于下方历史 Line1 试验说明）
 
 新线由用户确认：1 红、2 白、3 棕、4 绿、5 黄、6 黑。本轮使用 Line2：3 脚棕线接 PA1/A1，6 脚黑线接 STM32 GND；其余芯线单独绝缘，相机 USB 供电。

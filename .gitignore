@@ -16,3 +16,8 @@
 *.uvguix.*
 *.uvoptx
 .env
+
+**/build-aarch64/
+**/runtime-aarch64/
+**/vendor/arm64/extracted/
+**/vendor/packages/

@@ -1,0 +1,44 @@
+Jetson AGX Orin ARM64 软件移植记录（2026-11-23）
+
+平台实测：Ubuntu 22.04.5 aarch64，JetPack 6.2.2，L4T 36.5.0，内核 5.15.185-tegra。
+登录 door@192.168.2.127，工作区 /home/door/mid360s_orin_20261123。
+复用已有 ROS 2 Humble Desktop / colcon / PCL / Eigen / OpenCV，无系统重装或 apt 升级。
+
+已完成并验证：
+1. x86 基线标签 camera-x86-baseline-20261123 已推送，固定原提交65ebf6f。
+   Release 中原始 x86 SDK ZIP 已上传，57897166 字节；SHA256：
+   51b98261cbd63b6ac4581d834907976be31c5e38ea55e25ada4be5b27ed2e370。
+2. 下载厂家同版本 ARM64 SDK，ZIP SHA256：
+   e48e52802d65fdf8d1f67c2e0077bcf106eab2beaccf824db7dd369bbfc4d955。
+   原包 lib/Jetson_TX1/libMVSDK.so.2.1.0.194984 经 file 验证为 ARM aarch64。
+   仅解压用户态库，没有运行 install.sh 或安装旧驱动。
+3. 相机脚本按本机架构选择SDK，校验ELF架构；ARM构建/运行目录与原x86目录分离。
+   WSL x86重新构建成功，SDK V2.3.2.194985和ROS节点初始化通过。
+   Orin ARM64原生构建成功，SDK V2.3.2.194984和ROS节点初始化通过。
+4. Orin内 Livox SDK2、livox_ros_driver2、fast_lio均构建成功。
+   ros2 pkg executables 分别找到 livox_ros_driver2_node、fastlio_mapping。
+   上游RapidJSON、PCL/Boost编译警告保留，未通过隐藏警告来宣称无警告构建。
+5. 修改前相机脚本备份在 camera/before-arm64-20261123。
+   原已通过的FAST-LIO源码只复制到独立机载工作区，没有覆盖原Windows/WSL流程。
+
+排错记录：
+- SSH服务器接受公钥后，本机密钥生成参数被PowerShell转义为非空短语，已在本机修正；
+  公钥未更换，不需要用户重复安装。私钥只存Windows用户.ssh目录，不进入仓库。
+- 第一次依赖检查未source ROS环境，因此ROS间接库显示not found；独立检查脚本已修正，
+  在真实运行环境下重新检查通过，原失败报告保留。
+- --ros-args --help并非本节点支持的CLI，检查时异常退出；现使用明确只读参数
+  check_runtime:=true，实际创建ROS节点并初始化OpenCV/SDK后退出，不打开相机。
+- 首次PowerShell管道发送检查脚本末尾带CR字符；改用scp传输LF脚本，机载检查完成。
+
+2026-11-23 20:08 实机追加：
+相机已接Orin，USB 5000M；root-only写权限导致SDK cameras=0。
+用户执行针对当前相机节点的临时ACL后，SDK成功识别原序列号。
+30ms/增益2.0/3072x2048/5FPS自由运行，两次40秒各200帧、0帧号缺口、0超时。
+稳定段raw149帧约4.926Hz，JPEG151帧约4.993Hz；同首末时间戳SDK151帧。
+计数核对COUNT_FAIL，raw缺2帧，JPEG缺0帧；不能用速率容差通过替代无丢帧验收。
+完整复刻步骤及已知限制见同目录README.md，证据见仓库evidence/orin-20261123。
+
+尚未完成：
+ROS image_raw严格无丢帧/目标接收率验收、机载雷达网络设置/收包/建图、
+同步串口桥与ST-LINK测试控制的Linux迁移、统一图像时间戳、真实UTC/RTK。
+硬件仍需按阶段接入Orin。当前不因编译成功而认定移植全部完成。

@@ -1,0 +1,66 @@
+[1795435639.754893] [interface.c:784:getDriverVersion] Unload Universal Ethernet drivers.
+
+/proc/modules u3v_drv not exist
+SDK=V2.3.2.194984 USB cameras=1
+ZM-3000-60UC serial=DD07657AAK00023
+sequence size exceeds remaining buffer
+sequence size exceeds remaining buffer
+frames=10 fps=4.06049 gaps=0 timeouts=0 3072x2048 bayer_rggb8
+mean_ms wait=137.559 publish=5.01739 display=103.215
+SDK received=12 errors=0 lost=0 fps=4.99591 Mbps=251.452
+frames=22 fps=5.92368 gaps=0 timeouts=0 3072x2048 bayer_rggb8
+mean_ms wait=116.428 publish=4.62029 display=82.5885
+SDK received=22 errors=0 lost=0 fps=4.99472 Mbps=251.393
+frames=32 fps=4.99408 gaps=0 timeouts=0 3072x2048 bayer_rggb8
+mean_ms wait=120.264 publish=4.52242 display=77.7033
+SDK received=32 errors=0 lost=0 fps=4.9944 Mbps=251.376
+frames=42 fps=4.99283 gaps=0 timeouts=0 3072x2048 bayer_rggb8
+mean_ms wait=122.216 publish=4.52114 display=75.1638
+SDK received=42 errors=0 lost=0 fps=4.9942 Mbps=251.366
+frames=52 fps=4.99553 gaps=0 timeouts=0 3072x2048 bayer_rggb8
+mean_ms wait=123.618 publish=4.47732 display=73.4225
+SDK received=52 errors=0 lost=0 fps=4.99417 Mbps=251.365
+frames=62 fps=4.99235 gaps=0 timeouts=0 3072x2048 bayer_rggb8
+mean_ms wait=124.521 publish=4.46403 display=72.2942
+SDK received=62 errors=0 lost=0 fps=4.99409 Mbps=251.361
+frames=72 fps=4.99469 gaps=0 timeouts=0 3072x2048 bayer_rggb8
+mean_ms wait=125.012 publish=4.49428 display=71.5867
+SDK received=72 errors=0 lost=0 fps=4.99407 Mbps=251.36
+frames=82 fps=4.99525 gaps=0 timeouts=0 3072x2048 bayer_rggb8
+mean_ms wait=125.377 publish=4.50052 display=71.0704
+SDK received=82 errors=0 lost=0 fps=4.99403 Mbps=251.358
+frames=92 fps=4.99295 gaps=0 timeouts=0 3072x2048 bayer_rggb8
+mean_ms wait=125.823 publish=4.47419 display=70.5482
+SDK received=92 errors=0 lost=0 fps=4.994 Mbps=251.356
+frames=102 fps=4.99427 gaps=0 timeouts=0 3072x2048 bayer_rggb8
+mean_ms wait=126.28 publish=4.4534 display=70.0258
+SDK received=102 errors=0 lost=0 fps=4.99397 Mbps=251.355
+frames=112 fps=4.99371 gaps=0 timeouts=0 3072x2048 bayer_rggb8
+mean_ms wait=126.655 publish=4.43492 display=69.5997
+SDK received=112 errors=0 lost=0 fps=4.99396 Mbps=251.354
+frames=122 fps=4.99484 gaps=0 timeouts=0 3072x2048 bayer_rggb8
+mean_ms wait=126.963 publish=4.41863 display=69.2456
+SDK received=122 errors=0 lost=0 fps=4.99395 Mbps=251.354
+frames=132 fps=4.99308 gaps=0 timeouts=0 3072x2048 bayer_rggb8
+mean_ms wait=127.23 publish=4.406 display=68.9444
+SDK received=132 errors=0 lost=0 fps=4.99393 Mbps=251.353
+frames=142 fps=4.99546 gaps=0 timeouts=0 3072x2048 bayer_rggb8
+mean_ms wait=127.398 publish=4.39504 display=68.7409
+SDK received=142 errors=0 lost=0 fps=4.99392 Mbps=251.352
+frames=152 fps=4.96645 gaps=0 timeouts=0 3072x2048 bayer_rggb8
+mean_ms wait=127.614 publish=4.39493 display=68.5616
+SDK received=152 errors=0 lost=0 fps=4.9939 Mbps=251.351
+frames=163 fps=5.17693 gaps=0 timeouts=0 3072x2048 bayer_rggb8
+mean_ms wait=131.456 publish=4.26019 display=64.3317
+SDK received=163 errors=0 lost=0 fps=4.99391 Mbps=251.352
+frames=173 fps=4.99354 gaps=0 timeouts=0 3072x2048 bayer_rggb8
+mean_ms wait=135.271 publish=4.15435 display=60.6137
+SDK received=173 errors=0 lost=0 fps=4.99389 Mbps=251.351
+frames=183 fps=4.99482 gaps=0 timeouts=0 3072x2048 bayer_rggb8
+mean_ms wait=138.667 publish=4.05916 display=57.3019
+SDK received=183 errors=0 lost=0 fps=4.99389 Mbps=251.35
+frames=193 fps=4.99479 gaps=0 timeouts=0 3072x2048 bayer_rggb8
+mean_ms wait=141.717 publish=3.96882 display=54.3333
+SDK received=193 errors=0 lost=0 fps=4.99389 Mbps=251.351
+END frames=200 gaps=0 timeouts=0
+[33;40m[0m[33;40m[0m[33;40m[0m[33;40m[0m[33;40m[0m

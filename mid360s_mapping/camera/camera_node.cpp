@@ -56,6 +56,12 @@ int main(int argc, char **argv) {
   int result = 0;
   try {
     auto node = std::make_shared<rclcpp::Node>("zm_camera");
+    if (node->declare_parameter<bool>("check_runtime", false)) {
+      std::cout << "Runtime check PASS: ROS node and OpenCV initialized; SDK="
+                << IMV_GetVersion() << "; no camera opened" << std::endl;
+      rclcpp::shutdown();
+      return 0;
+    }
     const auto serial = node->declare_parameter<std::string>("serial","DD07657AAK00023");
     const bool preview = node->declare_parameter<bool>("preview",true);
     const double seconds = node->declare_parameter<double>("seconds",0.0);
@@ -105,6 +111,8 @@ int main(int argc, char **argv) {
         }
       }
       camera.set_enum("TriggerSource",trigger_source.c_str(),snapshot);
+      // Device exposes TriggerActivation only with TriggerMode enabled.
+      camera.set_enum("TriggerMode","On",snapshot);
       camera.set_enum("TriggerActivation","RisingEdge",snapshot);
     }
     camera.set_enum("AcquisitionMode","Continuous",snapshot);

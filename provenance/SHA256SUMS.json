@@ -6,8 +6,8 @@
   },
   {
     "path": ".gitignore",
-    "bytes": 210,
-    "sha256": "b8bba430ee83a335f705c379ce72a60178c0d96d84dd8f273d8b106985657af4"
+    "bytes": 296,
+    "sha256": "b59848e0859305c39e3b98393da359d4f2548cff3f3d7c9c12a348ebdb292f4f"
   },
   {
     "path": "artifacts/joint-sync-test/joint-sync-test.axf",
@@ -48,6 +48,61 @@
     "path": "docs/SYNC_RTK.md",
     "bytes": 3249,
     "sha256": "e2bd30ddea31d575d556742d8dd06965f3c2aa7042613c5ae671f9372b814634"
+  },
+  {
+    "path": "evidence/orin-20261123/build-lidar.log",
+    "bytes": 50324,
+    "sha256": "89e7ea11938d84ed7bcd096bfb76a136636ff72037c6c3f6e246f8a023d0aa52"
+  },
+  {
+    "path": "evidence/orin-20261123/camera-delivery-count-audit.json",
+    "bytes": 539,
+    "sha256": "78693bfaaedc2fb8c4d347069d1df6b9d0796814261c4b6f9c4ff6de1638e75f"
+  },
+  {
+    "path": "evidence/orin-20261123/camera-delivery-first.json",
+    "bytes": 934,
+    "sha256": "d22944af31c4c57c0f5cc315dd66b951001c85c9874940e7f5c9827841039bf3"
+  },
+  {
+    "path": "evidence/orin-20261123/camera-delivery-steady.json",
+    "bytes": 1093,
+    "sha256": "1fdbd1487b754b71fcf7a58d79175b307ff3b12f74979adc2a6e431f85b7cfde"
+  },
+  {
+    "path": "evidence/orin-20261123/camera-first-console.log",
+    "bytes": 3638,
+    "sha256": "60cdc9ae818aa0ea26a0d92cf545cb25a6beda63426a5cd13c9e5c97635b7d3b"
+  },
+  {
+    "path": "evidence/orin-20261123/capture-20261123-200833-K6BU/console.log",
+    "bytes": 3640,
+    "sha256": "4a5f60ca34546dbeacdab1c3871c54c9bccede5b78e2db89124074ab9a70dadd"
+  },
+  {
+    "path": "evidence/orin-20261123/capture-20261123-200833-K6BU/frames.csv",
+    "bytes": 11156,
+    "sha256": "e37ce2b7333a659d41d174a1456dbf215268c366c65ef7e02fc2642002994bad"
+  },
+  {
+    "path": "evidence/orin-20261123/capture-20261123-200833-K6BU/settings-before.txt",
+    "bytes": 191,
+    "sha256": "15064fe60593b6225677c75aad130df0110e3e3b7b8fe3b719e608cdb4f8098d"
+  },
+  {
+    "path": "evidence/orin-20261123/capture-20261123-200833-K6BU/snapshot.png",
+    "bytes": 5353617,
+    "sha256": "05a02d05011b521e7680b536ae7920101a6e2a53db20983858fc3c64005a3af4"
+  },
+  {
+    "path": "evidence/orin-20261123/ros-runtime-aarch64.txt",
+    "bytes": 121,
+    "sha256": "66940c742675b028ab0c22567c8dd56941269eb0f25060d5e3b183159b1e0e48"
+  },
+  {
+    "path": "evidence/orin-20261123/ros-runtime-x86_64.txt",
+    "bytes": 121,
+    "sha256": "9b707a584c179bb2b84e1342b96b972e29171693d1a0e1e95a22fc03958d6ff1"
   },
   {
     "path": "evidence/room-test-20261119/clock_motion_audit.json",
@@ -145,19 +200,34 @@
     "sha256": "3b8568dc6fb272e55ae9575b18ed1a8050e49c9c99af7b9dd47a7152bb2eed08"
   },
   {
+    "path": "mid360s_mapping/camera/audit_camera_delivery.py",
+    "bytes": 1602,
+    "sha256": "e78ae0d924cdf5f58773c6bb26eee6c9b9887aceb1f51a89dc2b13aaf40293c0"
+  },
+  {
     "path": "mid360s_mapping/camera/build.sh",
-    "bytes": 396,
-    "sha256": "007557934a3f6c1cad34a1f39063d8f440b40766ac934d95517ad388dec12b46"
+    "bytes": 541,
+    "sha256": "8d0462e29f49c3d5f7303f625d8c72be653adcc7362e1b5e85fc61d5325ce20b"
   },
   {
     "path": "mid360s_mapping/camera/camera_node.cpp",
-    "bytes": 15756,
-    "sha256": "21de20e696b4509d14d0f6a12a91976723b9935964bf611d5a30ca8cedbe71bb"
+    "bytes": 16147,
+    "sha256": "14e973de25e9cd47f2ec36505717bccf614a66c14117dc442008cf083d91534f"
+  },
+  {
+    "path": "mid360s_mapping/camera/check-runtime.sh",
+    "bytes": 850,
+    "sha256": "bfd8ec165700d7c1c60490a7921f45ce26a46b393169de5e50c271b9b4c38bff"
+  },
+  {
+    "path": "mid360s_mapping/camera/check_camera_delivery.py",
+    "bytes": 3188,
+    "sha256": "fac513ddf0f877f83a901eeb38c304c3061701b6033c5418351efd3668880902"
   },
   {
     "path": "mid360s_mapping/camera/CMakeLists.txt",
-    "bytes": 822,
-    "sha256": "3f006184f0433a1e571ce6b1f2931b60a7f76ed2f770a8a590543c4a8b0e02ae"
+    "bytes": 1321,
+    "sha256": "d8b002646bfe6222b38a02f1474834f4669983b63a982b2eb33177d8bf2963c5"
   },
   {
     "path": "mid360s_mapping/camera/fastdds-camera.xml",
@@ -176,18 +246,18 @@
   },
   {
     "path": "mid360s_mapping/camera/README.md",
-    "bytes": 7209,
-    "sha256": "2cf787d7ad9b8345a2ccf67f111fe0caddfcb1ddae4b6759c1ff349b64b4e14f"
+    "bytes": 9723,
+    "sha256": "07ea853a33730dab71c22499c1a47284785e8cb111f455a48c62bc4281e3773a"
   },
   {
     "path": "mid360s_mapping/camera/run-camera.sh",
     "bytes": 470,
-    "sha256": "d39c9caca6b8409bea7410862dc94ea142e0e40e55e7a9d41520ab102d59e5c6"
+    "sha256": "ad320b7f2d5d142bc760195d2514ea6505fd62a5f2310f3b5f8d39f1c946dfa1"
   },
   {
     "path": "mid360s_mapping/camera/sdk-env.sh",
-    "bytes": 242,
-    "sha256": "ef226a72da6385f94d2fac3521f6062892422b394a7cda66ae4b12b75eb71acc"
+    "bytes": 1828,
+    "sha256": "878ea5f76c1371f70414163dd9b632e6f24b40857202bf79b7624374d4f950c0"
   },
   {
     "path": "mid360s_mapping/camera/share-camera.ps1",
@@ -298,6 +368,46 @@
     "path": "mid360s_mapping/observe-live.sh",
     "bytes": 621,
     "sha256": "d0c1faa2180fc2125e3ab834f04688beed61403ae554890f76fdabfbc5d7320e"
+  },
+  {
+    "path": "mid360s_mapping/onboard/build-lidar.sh",
+    "bytes": 1642,
+    "sha256": "7d9aec755c8f7f20309ad9965400877c39cbc53db32b77dd5423a2b14d524942"
+  },
+  {
+    "path": "mid360s_mapping/onboard/deploy-camera.sh",
+    "bytes": 495,
+    "sha256": "56904d7b8078a10d8a74675cf0985241ff65657a3855c6c66797a79ffdbecf31"
+  },
+  {
+    "path": "mid360s_mapping/onboard/deploy-lidar.sh",
+    "bytes": 604,
+    "sha256": "09d6c3397ea182433c3d9aaf3acee87cdf8096d46d62aa3bd4807ab41e5d2b8b"
+  },
+  {
+    "path": "mid360s_mapping/onboard/lidar-source-manifest.json",
+    "bytes": 216,
+    "sha256": "2e57b93062119091b1293c4bba281c998b4852db6037dde25d0e4d80401e640c"
+  },
+  {
+    "path": "mid360s_mapping/onboard/preflight.sh",
+    "bytes": 1275,
+    "sha256": "1d88a99d0aa831908697b3db2647521bd1cafe725155046a86cb43e40f5ee290"
+  },
+  {
+    "path": "mid360s_mapping/onboard/README.md",
+    "bytes": 16880,
+    "sha256": "3a3f0ac321f4031e173a64ed7f08d6990e27287ae7d1d5fa2a2bd398a86bafdc"
+  },
+  {
+    "path": "mid360s_mapping/onboard/README.txt",
+    "bytes": 2324,
+    "sha256": "dad9ddee72e9971b67ad13e0193d22c1cf1bd472b85439949cbba2fb6411a55e"
+  },
+  {
+    "path": "mid360s_mapping/onboard/移植进度-20261123.txt",
+    "bytes": 3150,
+    "sha256": "1db3e08a6ec40975a6511a0b0f4f09d1725222c93a7e3961ffa3ce9c0c065b32"
   },
   {
     "path": "mid360s_mapping/patch_lio_stability.py",
@@ -1176,8 +1286,8 @@
   },
   {
     "path": "README.md",
-    "bytes": 3351,
-    "sha256": "eb4b99e66a6c7a16724b5a7fc766dfbf06f7301a1126efb1b9634c24c83c6a97"
+    "bytes": 4471,
+    "sha256": "60c5cf1715a09c0fa7047a9ce64816c7c29cdb370a3cfc557b23286f1e91c5f3"
   },
   {
     "path": "wsl/mid360s_lio/sdk/.gitignore",

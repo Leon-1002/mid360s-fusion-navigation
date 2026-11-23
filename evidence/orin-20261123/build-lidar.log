@@ -1,0 +1,545 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- main project dir: /home/door/mid360s_orin_20261123/workspace/sdk
+-- main project dir: /home/door/mid360s_orin_20261123/workspace/sdk/samples
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/door/mid360s_orin_20261123/workspace/sdk-build
+[  2%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/__/3rdparty/FastCRC/FastCRCsw.cpp.o
+[  2%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/__/3rdparty/FastCRC/FastCRCsw.cpp.o
+[  3%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/device_manager.cpp.o
+[  4%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/device_manager.cpp.o
+[  5%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/livox_lidar_sdk.cpp.o
+[  6%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/livox_lidar_sdk.cpp.o
+[  7%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/params_check.cpp.o
+[  8%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/params_check.cpp.o
+[  9%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/parse_cfg_file.cpp.o
+[ 10%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/parse_cfg_file.cpp.o
+[ 11%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/upgrade_manager.cpp.o
+[ 12%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/upgrade_manager.cpp.o
+[ 13%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/base/io_loop.cpp.o
+[ 15%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/base/io_loop.cpp.o
+[ 16%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/base/thread_base.cpp.o
+[ 17%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/base/thread_base.cpp.o
+[ 18%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/base/io_thread.cpp.o
+[ 19%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/base/io_thread.cpp.o
+[ 20%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/base/logging.cpp.o
+[ 21%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/base/logging.cpp.o
+[ 22%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/base/network/unix/network_util.cpp.o
+[ 23%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/base/network/unix/network_util.cpp.o
+[ 24%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/base/multiple_io/multiple_io_base.cpp.o
+[ 25%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/base/multiple_io/multiple_io_base.cpp.o
+[ 26%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/base/multiple_io/multiple_io_epoll.cpp.o
+[ 27%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/base/multiple_io/multiple_io_epoll.cpp.o
+[ 29%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/base/multiple_io/multiple_io_poll.cpp.o
+[ 30%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/base/multiple_io/multiple_io_poll.cpp.o
+[ 31%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/base/multiple_io/multiple_io_select.cpp.o
+[ 32%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/base/multiple_io/multiple_io_select.cpp.o
+[ 33%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/base/multiple_io/multiple_io_kqueue.cpp.o
+[ 34%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/base/multiple_io/multiple_io_kqueue.cpp.o
+[ 35%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/base/wake_up/unix/wake_up_pipe.cpp.o
+[ 36%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/comm/comm_port.cpp.o
+[ 37%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/base/wake_up/unix/wake_up_pipe.cpp.o
+[ 38%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/comm/comm_port.cpp.o
+[ 39%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/comm/sdk_protocol.cpp.o
+[ 40%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/comm/generate_seq.cpp.o
+[ 41%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/comm/sdk_protocol.cpp.o
+[ 43%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/comm/generate_seq.cpp.o
+[ 44%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/upgrade/firmware.cpp.o
+[ 45%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/upgrade/firmware.cpp.o
+[ 46%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/upgrade/livox_lidar_upgrader.cpp.o
+[ 47%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/upgrade/livox_lidar_upgrader.cpp.o
+[ 48%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/logger_handler/logger_manager.cpp.o
+[ 49%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/logger_handler/logger_manager.cpp.o
+[ 50%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/logger_handler/logger_handler.cpp.o
+[ 51%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/logger_handler/logger_handler.cpp.o
+[ 52%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/logger_handler/file_manager.cpp.o
+[ 53%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/logger_handler/file_manager.cpp.o
+[ 54%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/data_handler/data_handler.cpp.o
+[ 55%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/data_handler/data_handler.cpp.o
+[ 56%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/command_handler/command_impl.cpp.o
+[ 58%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/command_handler/command_impl.cpp.o
+[ 59%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/command_handler/general_command_handler.cpp.o
+[ 60%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/command_handler/general_command_handler.cpp.o
+[ 61%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/command_handler/hap_command_handler.cpp.o
+[ 62%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/command_handler/hap_command_handler.cpp.o
+In file included from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/stream.h:19,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/memorystream.h:22,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/encodedstream.h:22,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/document.h:26,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/command_handler/parse_lidar_state_info.h:38,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/command_handler/hap_command_handler.cpp:37:
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+  542 | #define RAPIDJSON_PRAGMA(x) _Pragma(RAPIDJSON_STRINGIFY(x))
+      |                             ^~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34: note: in expansion of macro ‘RAPIDJSON_PRAGMA’
+  543 | #define RAPIDJSON_DIAG_PRAGMA(x) RAPIDJSON_PRAGMA(GCC diagnostic x)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3: note: in expansion of macro ‘RAPIDJSON_DIAG_PRAGMA’
+  545 |   RAPIDJSON_DIAG_PRAGMA(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1: note: in expansion of macro ‘RAPIDJSON_DIAG_OFF’
+   36 | RAPIDJSON_DIAG_OFF(array - bounds)  // some gcc versions generate wrong warnings
+      | ^~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29: note: did you mean ‘-Warray-bounds’?
+  542 | #define RAPIDJSON_PRAGMA(x) _Pragma(RAPIDJSON_STRINGIFY(x))
+      |                             ^~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34: note: in expansion of macro ‘RAPIDJSON_PRAGMA’
+  543 | #define RAPIDJSON_DIAG_PRAGMA(x) RAPIDJSON_PRAGMA(GCC diagnostic x)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3: note: in expansion of macro ‘RAPIDJSON_DIAG_PRAGMA’
+  545 |   RAPIDJSON_DIAG_PRAGMA(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1: note: in expansion of macro ‘RAPIDJSON_DIAG_OFF’
+   36 | RAPIDJSON_DIAG_OFF(array - bounds)  // some gcc versions generate wrong warnings
+      | ^~~~~~~~~~~~~~~~~~
+In file included from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/stream.h:19,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/memorystream.h:22,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/encodedstream.h:22,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/document.h:26,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/command_handler/parse_lidar_state_info.h:38,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/command_handler/hap_command_handler.cpp:37:
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+  542 | #define RAPIDJSON_PRAGMA(x) _Pragma(RAPIDJSON_STRINGIFY(x))
+      |                             ^~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34: note: in expansion of macro ‘RAPIDJSON_PRAGMA’
+  543 | #define RAPIDJSON_DIAG_PRAGMA(x) RAPIDJSON_PRAGMA(GCC diagnostic x)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3: note: in expansion of macro ‘RAPIDJSON_DIAG_PRAGMA’
+  545 |   RAPIDJSON_DIAG_PRAGMA(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1: note: in expansion of macro ‘RAPIDJSON_DIAG_OFF’
+   36 | RAPIDJSON_DIAG_OFF(array - bounds)  // some gcc versions generate wrong warnings
+      | ^~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29: note: did you mean ‘-Warray-bounds’?
+  542 | #define RAPIDJSON_PRAGMA(x) _Pragma(RAPIDJSON_STRINGIFY(x))
+      |                             ^~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34: note: in expansion of macro ‘RAPIDJSON_PRAGMA’
+  543 | #define RAPIDJSON_DIAG_PRAGMA(x) RAPIDJSON_PRAGMA(GCC diagnostic x)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3: note: in expansion of macro ‘RAPIDJSON_DIAG_PRAGMA’
+  545 |   RAPIDJSON_DIAG_PRAGMA(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1: note: in expansion of macro ‘RAPIDJSON_DIAG_OFF’
+   36 | RAPIDJSON_DIAG_OFF(array - bounds)  // some gcc versions generate wrong warnings
+      | ^~~~~~~~~~~~~~~~~~
+[ 63%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/command_handler/mid360_command_handler.cpp.o
+[ 64%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/command_handler/mid360_command_handler.cpp.o
+In file included from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/stream.h:19,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/memorystream.h:22,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/encodedstream.h:22,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/document.h:26,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/command_handler/parse_lidar_state_info.h:38,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/command_handler/mid360_command_handler.cpp:37:
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+  542 | #define RAPIDJSON_PRAGMA(x) _Pragma(RAPIDJSON_STRINGIFY(x))
+      |                             ^~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34: note: in expansion of macro ‘RAPIDJSON_PRAGMA’
+  543 | #define RAPIDJSON_DIAG_PRAGMA(x) RAPIDJSON_PRAGMA(GCC diagnostic x)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3: note: in expansion of macro ‘RAPIDJSON_DIAG_PRAGMA’
+  545 |   RAPIDJSON_DIAG_PRAGMA(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1: note: in expansion of macro ‘RAPIDJSON_DIAG_OFF’
+   36 | RAPIDJSON_DIAG_OFF(array - bounds)  // some gcc versions generate wrong warnings
+      | ^~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29: note: did you mean ‘-Warray-bounds’?
+  542 | #define RAPIDJSON_PRAGMA(x) _Pragma(RAPIDJSON_STRINGIFY(x))
+      |                             ^~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34: note: in expansion of macro ‘RAPIDJSON_PRAGMA’
+  543 | #define RAPIDJSON_DIAG_PRAGMA(x) RAPIDJSON_PRAGMA(GCC diagnostic x)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3: note: in expansion of macro ‘RAPIDJSON_DIAG_PRAGMA’
+  545 |   RAPIDJSON_DIAG_PRAGMA(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1: note: in expansion of macro ‘RAPIDJSON_DIAG_OFF’
+   36 | RAPIDJSON_DIAG_OFF(array - bounds)  // some gcc versions generate wrong warnings
+      | ^~~~~~~~~~~~~~~~~~
+In file included from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/stream.h:19,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/memorystream.h:22,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/encodedstream.h:22,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/document.h:26,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/command_handler/parse_lidar_state_info.h:38,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/command_handler/mid360_command_handler.cpp:37:
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+  542 | #define RAPIDJSON_PRAGMA(x) _Pragma(RAPIDJSON_STRINGIFY(x))
+      |                             ^~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34: note: in expansion of macro ‘RAPIDJSON_PRAGMA’
+  543 | #define RAPIDJSON_DIAG_PRAGMA(x) RAPIDJSON_PRAGMA(GCC diagnostic x)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3: note: in expansion of macro ‘RAPIDJSON_DIAG_PRAGMA’
+  545 |   RAPIDJSON_DIAG_PRAGMA(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1: note: in expansion of macro ‘RAPIDJSON_DIAG_OFF’
+   36 | RAPIDJSON_DIAG_OFF(array - bounds)  // some gcc versions generate wrong warnings
+      | ^~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29: note: did you mean ‘-Warray-bounds’?
+  542 | #define RAPIDJSON_PRAGMA(x) _Pragma(RAPIDJSON_STRINGIFY(x))
+      |                             ^~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34: note: in expansion of macro ‘RAPIDJSON_PRAGMA’
+  543 | #define RAPIDJSON_DIAG_PRAGMA(x) RAPIDJSON_PRAGMA(GCC diagnostic x)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3: note: in expansion of macro ‘RAPIDJSON_DIAG_PRAGMA’
+  545 |   RAPIDJSON_DIAG_PRAGMA(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1: note: in expansion of macro ‘RAPIDJSON_DIAG_OFF’
+   36 | RAPIDJSON_DIAG_OFF(array - bounds)  // some gcc versions generate wrong warnings
+      | ^~~~~~~~~~~~~~~~~~
+[ 65%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/command_handler/build_request.cpp.o
+[ 66%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/command_handler/build_request.cpp.o
+[ 67%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/command_handler/parse_lidar_state_info.cpp.o
+[ 68%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/command_handler/parse_lidar_state_info.cpp.o
+In file included from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/stream.h:19,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/memorystream.h:22,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/encodedstream.h:22,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/document.h:26,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/command_handler/parse_lidar_state_info.h:38,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/command_handler/parse_lidar_state_info.cpp:2:
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+  542 | #define RAPIDJSON_PRAGMA(x) _Pragma(RAPIDJSON_STRINGIFY(x))
+      |                             ^~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34: note: in expansion of macro ‘RAPIDJSON_PRAGMA’
+  543 | #define RAPIDJSON_DIAG_PRAGMA(x) RAPIDJSON_PRAGMA(GCC diagnostic x)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3: note: in expansion of macro ‘RAPIDJSON_DIAG_PRAGMA’
+  545 |   RAPIDJSON_DIAG_PRAGMA(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1: note: in expansion of macro ‘RAPIDJSON_DIAG_OFF’
+   36 | RAPIDJSON_DIAG_OFF(array - bounds)  // some gcc versions generate wrong warnings
+      | ^~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29: note: did you mean ‘-Warray-bounds’?
+  542 | #define RAPIDJSON_PRAGMA(x) _Pragma(RAPIDJSON_STRINGIFY(x))
+      |                             ^~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34: note: in expansion of macro ‘RAPIDJSON_PRAGMA’
+  543 | #define RAPIDJSON_DIAG_PRAGMA(x) RAPIDJSON_PRAGMA(GCC diagnostic x)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3: note: in expansion of macro ‘RAPIDJSON_DIAG_PRAGMA’
+  545 |   RAPIDJSON_DIAG_PRAGMA(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1: note: in expansion of macro ‘RAPIDJSON_DIAG_OFF’
+   36 | RAPIDJSON_DIAG_OFF(array - bounds)  // some gcc versions generate wrong warnings
+      | ^~~~~~~~~~~~~~~~~~
+In file included from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/stream.h:19,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/memorystream.h:22,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/encodedstream.h:22,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/document.h:26,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/command_handler/parse_lidar_state_info.h:38,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/command_handler/parse_lidar_state_info.cpp:2:
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+  542 | #define RAPIDJSON_PRAGMA(x) _Pragma(RAPIDJSON_STRINGIFY(x))
+      |                             ^~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34: note: in expansion of macro ‘RAPIDJSON_PRAGMA’
+  543 | #define RAPIDJSON_DIAG_PRAGMA(x) RAPIDJSON_PRAGMA(GCC diagnostic x)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3: note: in expansion of macro ‘RAPIDJSON_DIAG_PRAGMA’
+  545 |   RAPIDJSON_DIAG_PRAGMA(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1: note: in expansion of macro ‘RAPIDJSON_DIAG_OFF’
+   36 | RAPIDJSON_DIAG_OFF(array - bounds)  // some gcc versions generate wrong warnings
+      | ^~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29: note: did you mean ‘-Warray-bounds’?
+  542 | #define RAPIDJSON_PRAGMA(x) _Pragma(RAPIDJSON_STRINGIFY(x))
+      |                             ^~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34: note: in expansion of macro ‘RAPIDJSON_PRAGMA’
+  543 | #define RAPIDJSON_DIAG_PRAGMA(x) RAPIDJSON_PRAGMA(GCC diagnostic x)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3: note: in expansion of macro ‘RAPIDJSON_DIAG_PRAGMA’
+  545 |   RAPIDJSON_DIAG_PRAGMA(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1: note: in expansion of macro ‘RAPIDJSON_DIAG_OFF’
+   36 | RAPIDJSON_DIAG_OFF(array - bounds)  // some gcc versions generate wrong warnings
+      | ^~~~~~~~~~~~~~~~~~
+[ 69%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/command_handler/mid360s_command_handler.cpp.o
+[ 70%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/command_handler/mid360s_command_handler.cpp.o
+In file included from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/stream.h:19,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/memorystream.h:22,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/encodedstream.h:22,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/document.h:26,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/command_handler/parse_lidar_state_info.h:38,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/command_handler/mid360s_command_handler.cpp:37:
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+  542 | #define RAPIDJSON_PRAGMA(x) _Pragma(RAPIDJSON_STRINGIFY(x))
+      |                             ^~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34: note: in expansion of macro ‘RAPIDJSON_PRAGMA’
+  543 | #define RAPIDJSON_DIAG_PRAGMA(x) RAPIDJSON_PRAGMA(GCC diagnostic x)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3: note: in expansion of macro ‘RAPIDJSON_DIAG_PRAGMA’
+  545 |   RAPIDJSON_DIAG_PRAGMA(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1: note: in expansion of macro ‘RAPIDJSON_DIAG_OFF’
+   36 | RAPIDJSON_DIAG_OFF(array - bounds)  // some gcc versions generate wrong warnings
+      | ^~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29: note: did you mean ‘-Warray-bounds’?
+  542 | #define RAPIDJSON_PRAGMA(x) _Pragma(RAPIDJSON_STRINGIFY(x))
+      |                             ^~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34: note: in expansion of macro ‘RAPIDJSON_PRAGMA’
+  543 | #define RAPIDJSON_DIAG_PRAGMA(x) RAPIDJSON_PRAGMA(GCC diagnostic x)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3: note: in expansion of macro ‘RAPIDJSON_DIAG_PRAGMA’
+  545 |   RAPIDJSON_DIAG_PRAGMA(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1: note: in expansion of macro ‘RAPIDJSON_DIAG_OFF’
+   36 | RAPIDJSON_DIAG_OFF(array - bounds)  // some gcc versions generate wrong warnings
+      | ^~~~~~~~~~~~~~~~~~
+In file included from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/stream.h:19,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/memorystream.h:22,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/encodedstream.h:22,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/document.h:26,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/command_handler/parse_lidar_state_info.h:38,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/command_handler/mid360s_command_handler.cpp:37:
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+  542 | #define RAPIDJSON_PRAGMA(x) _Pragma(RAPIDJSON_STRINGIFY(x))
+      |                             ^~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34: note: in expansion of macro ‘RAPIDJSON_PRAGMA’
+  543 | #define RAPIDJSON_DIAG_PRAGMA(x) RAPIDJSON_PRAGMA(GCC diagnostic x)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3: note: in expansion of macro ‘RAPIDJSON_DIAG_PRAGMA’
+  545 |   RAPIDJSON_DIAG_PRAGMA(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1: note: in expansion of macro ‘RAPIDJSON_DIAG_OFF’
+   36 | RAPIDJSON_DIAG_OFF(array - bounds)  // some gcc versions generate wrong warnings
+      | ^~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29: note: did you mean ‘-Warray-bounds’?
+  542 | #define RAPIDJSON_PRAGMA(x) _Pragma(RAPIDJSON_STRINGIFY(x))
+      |                             ^~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34: note: in expansion of macro ‘RAPIDJSON_PRAGMA’
+  543 | #define RAPIDJSON_DIAG_PRAGMA(x) RAPIDJSON_PRAGMA(GCC diagnostic x)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3: note: in expansion of macro ‘RAPIDJSON_DIAG_PRAGMA’
+  545 |   RAPIDJSON_DIAG_PRAGMA(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1: note: in expansion of macro ‘RAPIDJSON_DIAG_OFF’
+   36 | RAPIDJSON_DIAG_OFF(array - bounds)  // some gcc versions generate wrong warnings
+      | ^~~~~~~~~~~~~~~~~~
+[ 72%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/command_handler/avia2_command_handler.cpp.o
+[ 73%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/command_handler/avia2_command_handler.cpp.o
+In file included from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/stream.h:19,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/memorystream.h:22,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/encodedstream.h:22,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/document.h:26,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/command_handler/parse_lidar_state_info.h:38,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/command_handler/avia2_command_handler.cpp:37:
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+  542 | #define RAPIDJSON_PRAGMA(x) _Pragma(RAPIDJSON_STRINGIFY(x))
+      |                             ^~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34: note: in expansion of macro ‘RAPIDJSON_PRAGMA’
+  543 | #define RAPIDJSON_DIAG_PRAGMA(x) RAPIDJSON_PRAGMA(GCC diagnostic x)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3: note: in expansion of macro ‘RAPIDJSON_DIAG_PRAGMA’
+  545 |   RAPIDJSON_DIAG_PRAGMA(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1: note: in expansion of macro ‘RAPIDJSON_DIAG_OFF’
+   36 | RAPIDJSON_DIAG_OFF(array - bounds)  // some gcc versions generate wrong warnings
+      | ^~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29: note: did you mean ‘-Warray-bounds’?
+  542 | #define RAPIDJSON_PRAGMA(x) _Pragma(RAPIDJSON_STRINGIFY(x))
+      |                             ^~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34: note: in expansion of macro ‘RAPIDJSON_PRAGMA’
+  543 | #define RAPIDJSON_DIAG_PRAGMA(x) RAPIDJSON_PRAGMA(GCC diagnostic x)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3: note: in expansion of macro ‘RAPIDJSON_DIAG_PRAGMA’
+  545 |   RAPIDJSON_DIAG_PRAGMA(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1: note: in expansion of macro ‘RAPIDJSON_DIAG_OFF’
+   36 | RAPIDJSON_DIAG_OFF(array - bounds)  // some gcc versions generate wrong warnings
+      | ^~~~~~~~~~~~~~~~~~
+In file included from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/stream.h:19,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/memorystream.h:22,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/encodedstream.h:22,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/document.h:26,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/command_handler/parse_lidar_state_info.h:38,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/command_handler/avia2_command_handler.cpp:37:
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+  542 | #define RAPIDJSON_PRAGMA(x) _Pragma(RAPIDJSON_STRINGIFY(x))
+      |                             ^~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34: note: in expansion of macro ‘RAPIDJSON_PRAGMA’
+  543 | #define RAPIDJSON_DIAG_PRAGMA(x) RAPIDJSON_PRAGMA(GCC diagnostic x)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3: note: in expansion of macro ‘RAPIDJSON_DIAG_PRAGMA’
+  545 |   RAPIDJSON_DIAG_PRAGMA(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1: note: in expansion of macro ‘RAPIDJSON_DIAG_OFF’
+   36 | RAPIDJSON_DIAG_OFF(array - bounds)  // some gcc versions generate wrong warnings
+      | ^~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29: note: did you mean ‘-Warray-bounds’?
+  542 | #define RAPIDJSON_PRAGMA(x) _Pragma(RAPIDJSON_STRINGIFY(x))
+      |                             ^~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34: note: in expansion of macro ‘RAPIDJSON_PRAGMA’
+  543 | #define RAPIDJSON_DIAG_PRAGMA(x) RAPIDJSON_PRAGMA(GCC diagnostic x)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3: note: in expansion of macro ‘RAPIDJSON_DIAG_PRAGMA’
+  545 |   RAPIDJSON_DIAG_PRAGMA(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1: note: in expansion of macro ‘RAPIDJSON_DIAG_OFF’
+   36 | RAPIDJSON_DIAG_OFF(array - bounds)  // some gcc versions generate wrong warnings
+      | ^~~~~~~~~~~~~~~~~~
+[ 74%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/command_handler/mid360l_command_handler.cpp.o
+[ 75%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/command_handler/mid360l_command_handler.cpp.o
+In file included from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/stream.h:19,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/memorystream.h:22,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/encodedstream.h:22,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/document.h:26,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/command_handler/parse_lidar_state_info.h:38,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/command_handler/mid360l_command_handler.cpp:37:
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+  542 | #define RAPIDJSON_PRAGMA(x) _Pragma(RAPIDJSON_STRINGIFY(x))
+      |                             ^~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34: note: in expansion of macro ‘RAPIDJSON_PRAGMA’
+  543 | #define RAPIDJSON_DIAG_PRAGMA(x) RAPIDJSON_PRAGMA(GCC diagnostic x)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3: note: in expansion of macro ‘RAPIDJSON_DIAG_PRAGMA’
+  545 |   RAPIDJSON_DIAG_PRAGMA(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1: note: in expansion of macro ‘RAPIDJSON_DIAG_OFF’
+   36 | RAPIDJSON_DIAG_OFF(array - bounds)  // some gcc versions generate wrong warnings
+      | ^~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29: note: did you mean ‘-Warray-bounds’?
+  542 | #define RAPIDJSON_PRAGMA(x) _Pragma(RAPIDJSON_STRINGIFY(x))
+      |                             ^~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34: note: in expansion of macro ‘RAPIDJSON_PRAGMA’
+  543 | #define RAPIDJSON_DIAG_PRAGMA(x) RAPIDJSON_PRAGMA(GCC diagnostic x)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3: note: in expansion of macro ‘RAPIDJSON_DIAG_PRAGMA’
+  545 |   RAPIDJSON_DIAG_PRAGMA(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1: note: in expansion of macro ‘RAPIDJSON_DIAG_OFF’
+   36 | RAPIDJSON_DIAG_OFF(array - bounds)  // some gcc versions generate wrong warnings
+      | ^~~~~~~~~~~~~~~~~~
+In file included from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/stream.h:19,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/memorystream.h:22,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/encodedstream.h:22,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/document.h:26,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/command_handler/parse_lidar_state_info.h:38,
+                 from /home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/command_handler/mid360l_command_handler.cpp:37:
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+  542 | #define RAPIDJSON_PRAGMA(x) _Pragma(RAPIDJSON_STRINGIFY(x))
+      |                             ^~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34: note: in expansion of macro ‘RAPIDJSON_PRAGMA’
+  543 | #define RAPIDJSON_DIAG_PRAGMA(x) RAPIDJSON_PRAGMA(GCC diagnostic x)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3: note: in expansion of macro ‘RAPIDJSON_DIAG_PRAGMA’
+  545 |   RAPIDJSON_DIAG_PRAGMA(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1: note: in expansion of macro ‘RAPIDJSON_DIAG_OFF’
+   36 | RAPIDJSON_DIAG_OFF(array - bounds)  // some gcc versions generate wrong warnings
+      | ^~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:542:29: note: did you mean ‘-Warray-bounds’?
+  542 | #define RAPIDJSON_PRAGMA(x) _Pragma(RAPIDJSON_STRINGIFY(x))
+      |                             ^~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:543:34: note: in expansion of macro ‘RAPIDJSON_PRAGMA’
+  543 | #define RAPIDJSON_DIAG_PRAGMA(x) RAPIDJSON_PRAGMA(GCC diagnostic x)
+      |                                  ^~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/rapidjson.h:545:3: note: in expansion of macro ‘RAPIDJSON_DIAG_PRAGMA’
+  545 |   RAPIDJSON_DIAG_PRAGMA(ignored RAPIDJSON_STRINGIFY(RAPIDJSON_JOIN(-W, x)))
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/home/door/mid360s_orin_20261123/workspace/sdk/sdk_core/../3rdparty/rapidjson/internal/dtoa.h:36:1: note: in expansion of macro ‘RAPIDJSON_DIAG_OFF’
+   36 | RAPIDJSON_DIAG_OFF(array - bounds)  // some gcc versions generate wrong warnings
+      | ^~~~~~~~~~~~~~~~~~
+[ 76%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/debug_point_cloud_handler/debug_point_cloud_manager.cpp.o
+[ 77%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/debug_point_cloud_handler/debug_point_cloud_manager.cpp.o
+[ 78%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_static.dir/debug_point_cloud_handler/debug_point_cloud_handler.cpp.o
+[ 79%] Building CXX object sdk_core/CMakeFiles/livox_lidar_sdk_shared.dir/debug_point_cloud_handler/debug_point_cloud_handler.cpp.o
+[ 80%] Linking CXX static library liblivox_lidar_sdk_static.a
+[ 80%] Built target livox_lidar_sdk_static
+[ 81%] Building CXX object samples/livox_lidar_quick_start/CMakeFiles/livox_lidar_quick_start.dir/main.cpp.o
+[ 82%] Linking CXX shared library liblivox_lidar_sdk_shared.so
+[ 83%] Linking CXX executable livox_lidar_quick_start
+[ 83%] Built target livox_lidar_sdk_shared
+[ 84%] Building CXX object samples/multi_lidars_upgrade/CMakeFiles/multi_lidars_upgrade.dir/main.cpp.o
+[ 84%] Built target livox_lidar_quick_start
+[ 86%] Building CXX object samples/logger/CMakeFiles/logger.dir/main.cpp.o
+[ 87%] Linking CXX executable multi_lidars_upgrade
+[ 88%] Linking CXX executable logger
+[ 88%] Built target multi_lidars_upgrade
+[ 89%] Building CXX object samples/debug_point_cloud/CMakeFiles/debug_point_cloud.dir/main.cpp.o
+[ 89%] Built target logger
+[ 90%] Building CXX object samples/lidar_cmd_observer/CMakeFiles/lidar_cmd_observer.dir/main.cpp.o
+[ 91%] Linking CXX executable debug_point_cloud
+[ 92%] Linking CXX executable lidar_cmd_observer
+[ 92%] Built target debug_point_cloud
+[ 93%] Building CXX object samples/livox_lidar_rmc_time_sync/CMakeFiles/livox_lidar_rmc_time_sync.dir/main.cpp.o
+[ 93%] Built target lidar_cmd_observer
+[ 94%] Building CXX object samples/livox_lidar_ip_set/CMakeFiles/livox_lidar_ip_set.dir/main.cpp.o
+[ 95%] Linking CXX executable livox_lidar_ip_set
+[ 96%] Building CXX object samples/livox_lidar_rmc_time_sync/CMakeFiles/livox_lidar_rmc_time_sync.dir/linux/synchro.cpp.o
+[ 96%] Built target livox_lidar_ip_set
+[ 97%] Building CXX object samples/livox_lidar_info_get/CMakeFiles/livox_lidar_info_get.dir/main.cpp.o
+[ 98%] Linking CXX executable livox_lidar_info_get
+[100%] Linking CXX executable livox_lidar_rmc_time_sync
+[100%] Built target livox_lidar_info_get
+[100%] Built target livox_lidar_rmc_time_sync
+Starting >>> livox_ros_driver2
+--- stderr: livox_ros_driver2
+/home/door/mid360s_orin_20261123/workspace/src/livox_ros_driver2/src/comm/pub_handler.cpp: In member function ‘void livox_ros::LidarPubHandler::ProcessDoubleEchoPoint(livox_ros::RawPacket&)’:
+/home/door/mid360s_orin_20261123/workspace/src/livox_ros_driver2/src/comm/pub_handler.cpp:467:12: warning: unused variable ‘index’ [-Wunused-variable]
+  467 |   uint32_t index = 0;
+      |            ^~~~~
+---
+Finished <<< livox_ros_driver2 [50.0s]
+
+Summary: 1 package finished [50.6s]
+  1 package had stderr output: livox_ros_driver2
+Starting >>> fast_lio
+--- stderr: fast_lio
+Current CPU archtecture: aarch64
+CMake Warning (dev) at CMakeLists.txt:81 (find_package):
+  Policy CMP0074 is not set: find_package uses <PackageName>_ROOT variables.
+  Run "cmake --help-policy CMP0074" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  CMake variable PCL_ROOT is set to:
+
+    /usr
+
+  For compatibility, CMake is ignoring the variable.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+Eigen:/usr/include/eigen3
+In file included from /usr/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/include/boost/smart_ptr/shared_ptr.hpp:29,
+                 from /usr/include/boost/shared_ptr.hpp:17,
+                 from /usr/include/boost/date_time/microsec_time_clock.hpp:18,
+                 from /usr/include/boost/interprocess/detail/posix_time_types_wrk.hpp:31,
+                 from /usr/include/boost/interprocess/detail/os_thread_functions.hpp:36,
+                 from /usr/include/boost/interprocess/sync/file_lock.hpp:26,
+                 from /usr/include/pcl-1.12/pcl/io/pcd_io.h:46,
+                 from /opt/ros/humble/include/pcl_conversions/pcl_conversions/pcl_conversions.h:73,
+                 from /home/door/mid360s_orin_20261123/workspace/src/FAST_LIO_ROS2/src/IMU_Processing.hpp:18,
+                 from /home/door/mid360s_orin_20261123/workspace/src/FAST_LIO_ROS2/src/laserMapping.cpp:47:
+/usr/include/boost/bind.hpp:36:1: note: ‘#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.’
+   36 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+In file included from /home/door/mid360s_orin_20261123/workspace/src/FAST_LIO_ROS2/include/IKFoM_toolkit/esekfom/../mtk/types/SOn.hpp:83,
+                 from /home/door/mid360s_orin_20261123/workspace/src/FAST_LIO_ROS2/include/IKFoM_toolkit/esekfom/esekfom.hpp:49,
+                 from /home/door/mid360s_orin_20261123/workspace/src/FAST_LIO_ROS2/include/use-ikfom.hpp:4,
+                 from /home/door/mid360s_orin_20261123/workspace/src/FAST_LIO_ROS2/src/IMU_Processing.hpp:22,
+                 from /home/door/mid360s_orin_20261123/workspace/src/FAST_LIO_ROS2/src/laserMapping.cpp:47:
+/home/door/mid360s_orin_20261123/workspace/src/FAST_LIO_ROS2/include/IKFoM_toolkit/esekfom/../mtk/types/../src/mtkmath.hpp: In instantiation of ‘std::pair<_FIter, _FIter> MTK::cos_sinc_sqrt(const scalar&) [with scalar = double]’:
+/home/door/mid360s_orin_20261123/workspace/src/FAST_LIO_ROS2/include/IKFoM_toolkit/esekfom/../mtk/types/../src/mtkmath.hpp:252:52:   required from ‘scalar MTK::exp(MTK::vectview<scalar, dim>, MTK::vectview<const scalar, dim>, const scalar&) [with scalar = double; int n = 3]’
+/home/door/mid360s_orin_20261123/workspace/src/FAST_LIO_ROS2/include/IKFoM_toolkit/esekfom/../mtk/types/S2.hpp:140:32:   required from ‘void MTK::S2<_scalar, den, num, S2_typ>::boxplus(MTK::vectview<const _scalar, 2>, MTK::S2<_scalar, den, num, S2_typ>::scalar) [with _scalar = double; int den = 98090; int num = 10000; int S2_typ = 1; MTK::S2<_scalar, den, num, S2_typ>::scalar = double]’
+/home/door/mid360s_orin_20261123/workspace/src/FAST_LIO_ROS2/include/use-ikfom.hpp:12:1:   required from here
+/home/door/mid360s_orin_20261123/workspace/src/FAST_LIO_ROS2/include/IKFoM_toolkit/esekfom/../mtk/types/../src/mtkmath.hpp:143:27: note: parameter passing for argument of type ‘std::pair<double, double>’ when C++17 is enabled changed to match C++14 in GCC 10.1
+  143 | std::pair<scalar, scalar> cos_sinc_sqrt(const scalar &x2){
+      |                           ^~~~~~~~~~~~~
+---
+Finished <<< fast_lio [2min 40s]
+
+Summary: 1 package finished [2min 41s]
+  1 package had stderr output: fast_lio
+livox_ros_driver2 livox_ros_driver2_node
+fast_lio fastlio_mapping
+Build finished. No sensor process was started.

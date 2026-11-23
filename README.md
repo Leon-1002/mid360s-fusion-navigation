@@ -34,3 +34,13 @@
 详见 [验收记录](mid360s_mapping/sync-test/联合硬件触发验收-20261123.txt)、[实测统计](evidence/sync/joint-20261123-175440/summary.json) 和 [固件说明](mid360s_mapping/stm32/joint-sync-test/README.txt)。固件产物位于 `artifacts/joint-sync-test/`。
 
 相机采集使用 Windows 原生 SDK；不代表 ROS image_raw 接收率达标。触发对应表为合成定时器计划值，实际曝光相位未外部测量，ROS 时间戳尚未统一，RTK/视觉融合未完成。首次校时过渡异常保留在完整统计中，稳定采集窗口单列。
+
+## Orin ARM64 移植分支（2026-11-23）
+
+修改前 x86 版本固定在 `camera-x86-baseline-20261123` 标签；Release 附有原始 x86 SDK ZIP。
+本分支 `codex/orin-arm64` 增加按架构选库及 ELF 检查；x86/ARM64 两端均通过原生构建、SDK 加载和 ROS 节点初始化。实际 Orin 为 JetPack 6.2.2 / Ubuntu 22.04.5，雷达 SDK、ROS 驱动和 FAST-LIO 也已编译成功。
+
+机载相机实机采集已验证：两次40秒各200帧，SDK无帧号缺口/超时。稳定段ROS raw约4.926Hz，同区间SDK/JPEG151帧、raw149帧；原始图像无丢帧验收失败，证据保留。雷达网络和机载同步/建图尚待验收。
+
+**复刻入口：[Jetson AGX Orin移植README](mid360s_mapping/onboard/README.md)**，包括环境、源码标签、SDK获取与SHA256、隔离目录、编译、USB权限、收帧和ROS接收计数验收、雷达构建、故障处理及回退。
+另见 [移植记录](mid360s_mapping/onboard/移植进度-20261123.txt)、[实测证据](evidence/orin-20261123/) 和 [相机说明](mid360s_mapping/camera/README.md)。原 x86 主分支及基线标签保留。
