@@ -1,0 +1,32 @@
+{
+  "target_points": 26376,
+  "endpoint_points": 26660,
+  "lio_return_angle_deg": 6.435094463031292,
+  "from_identity": {
+    "rotation_deg": 6.445916137543768,
+    "position_m": [
+      -0.009383883072618863,
+      0.0028853568404672335,
+      0.0006503348080712548
+    ],
+    "position_norm_m": 0.009838977638962442,
+    "overlap_within_20cm": 0.9742685671417854,
+    "rmse_within_20cm_m": 0.05502247355353526,
+    "orientation_difference_from_lio_deg": 0.1925159827070528,
+    "iterations": 60
+  },
+  "from_lio": {
+    "rotation_deg": 6.453830277642031,
+    "position_m": [
+      -0.010163212907331944,
+      0.0027784392221750043,
+      0.000559588014373175
+    ],
+    "position_norm_m": 0.010551007528047223,
+    "overlap_within_20cm": 0.9743435858964741,
+    "rmse_within_20cm_m": 0.05503903670443071,
+    "orientation_difference_from_lio_deg": 0.1967665344402758,
+    "iterations": 21
+  },
+  "note": "Independent cloud registration diagnostic, not externally measured ground truth"
+}

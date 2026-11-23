@@ -1,0 +1,35 @@
+{
+  "status": "design_only_not_consumed_by_runtime",
+  "enabled": false,
+  "sync_route": "stm32_pps_and_rmc_via_host_ethernet",
+  "serial": {
+    "device": null,
+    "baudrate": 9600,
+    "format": "8N1"
+  },
+  "time_source": {
+    "mode": "unconfigured",
+    "gnss_pps_input_pin": null,
+    "gnss_serial_input": null,
+    "require_valid_utc": true,
+    "allow_silent_fallback": false
+  },
+  "gnss_position": {
+    "enabled": false,
+    "receiver_model": null,
+    "topic": null,
+    "message_type": null,
+    "frame_id": null,
+    "antenna_lever_arm_m": null,
+    "covariance_source": null
+  },
+  "camera": {
+    "trigger_pin": "PA1",
+    "trigger_source": null,
+    "calibration_file": null
+  },
+  "lidar": {
+    "pps_pin": "PB5",
+    "gps_uart_direct": false
+  }
+}

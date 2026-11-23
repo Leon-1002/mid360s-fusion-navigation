@@ -1,0 +1,110 @@
+diff --git a/src/IMU_Processing.hpp b/src/IMU_Processing.hpp
+index f35378f..bdf87d2 100644
+--- a/src/IMU_Processing.hpp
++++ b/src/IMU_Processing.hpp
+@@ -73,9 +73,9 @@ class ImuProcess
+   V3D mean_acc;
+   V3D mean_gyr;
+   V3D angvel_last;
+-  V3D acc_s_last;
++  V3D acc_s_last = V3D::Zero();
+   double start_timestamp_;
+-  double last_lidar_end_time_;
++  double last_lidar_end_time_ = 0.0;
+   int    init_iter_num = 1;
+   bool   b_first_frame_ = true;
+   bool   imu_need_init_ = true;
+@@ -106,6 +106,8 @@ void ImuProcess::Reset()
+   mean_acc      = V3D(0, 0, -1.0);
+   mean_gyr      = V3D(0, 0, 0);
+   angvel_last       = Zero3d;
++  acc_s_last       = Zero3d;
++  last_lidar_end_time_ = 0.0;
+   imu_need_init_    = true;
+   start_timestamp_  = -1;
+   init_iter_num     = 1;
+@@ -352,6 +354,8 @@ void ImuProcess::Process(const MeasureGroup &meas,  esekfom::esekf<state_ikfom,
+     imu_need_init_ = true;
+     
+     last_imu_   = meas.imu.back();
++    // Prediction must start at the initialized state's scan boundary.
++    last_lidar_end_time_ = meas.lidar_end_time;
+ 
+     state_ikfom imu_state = kf_state.get_x();
+     if (init_iter_num > MAX_INI_COUNT)
+diff --git a/src/laserMapping.cpp b/src/laserMapping.cpp
+index d441261..206f564 100644
+--- a/src/laserMapping.cpp
++++ b/src/laserMapping.cpp
+@@ -280,11 +280,34 @@ void lasermap_fov_segment()
+     kdtree_delete_time = omp_get_wtime() - delete_begin;
+ }
+ 
++// A clock reset or a long sensor outage invalidates inertial propagation.
++// Keep the existing map and save service alive, but require a fresh session.
++bool sensor_time_fault = false;
++bool sensor_time_valid(double current, double previous, bool first, const char *sensor)
++{
++    if (sensor_time_fault) return false;
++    const double gap = current - previous;
++    // IMU must remain continuous; a short LiDAR outage can be bridged by IMU.
++    // Two seconds is within the five-second IMU subscription queue capacity.
++    const double max_gap = sensor[0] == 'I' ? 0.5 : 2.0;
++    if (!std::isfinite(current) || (!first && ikdtree.Root_Node != nullptr && (gap < 0.0 || gap > max_gap)))
++    {
++        sensor_time_fault = true;
++        RCLCPP_ERROR(rclcpp::get_logger("laser_mapping"),
++            "MAPPING PAUSED: %s timestamp discontinuity %.6f s. "
++            "Last valid map is retained and can be saved. Restart mapping in a new session.",
++            sensor, gap);
++        return false;
++    }
++    return true;
++}
++
+ void standard_pcl_cbk(const sensor_msgs::msg::PointCloud2::UniquePtr msg) 
+ {
++    double cur_time = get_time_sec(msg->header.stamp);
++    if (!sensor_time_valid(cur_time, last_timestamp_lidar, is_first_lidar, "LiDAR")) return;
+     mtx_buffer.lock();
+     scan_count ++;
+-    double cur_time = get_time_sec(msg->header.stamp);
+     double preprocess_start_time = omp_get_wtime();
+     if (!is_first_lidar && cur_time < last_timestamp_lidar)
+     {
+@@ -310,8 +333,9 @@ double timediff_lidar_wrt_imu = 0.0;
+ bool   timediff_set_flg = false;
+ void livox_pcl_cbk(const livox_ros_driver2::msg::CustomMsg::UniquePtr msg) 
+ {
+-    mtx_buffer.lock();
+     double cur_time = get_time_sec(msg->header.stamp);
++    if (!sensor_time_valid(cur_time, last_timestamp_lidar, is_first_lidar, "LiDAR")) return;
++    mtx_buffer.lock();
+     double preprocess_start_time = omp_get_wtime();
+     scan_count ++;
+     if (!is_first_lidar && cur_time < last_timestamp_lidar)
+@@ -362,6 +386,7 @@ void imu_cbk(const sensor_msgs::msg::Imu::UniquePtr msg_in)
+     }
+ 
+     double timestamp = get_time_sec(msg->header.stamp);
++    if (!sensor_time_valid(timestamp, last_timestamp_imu, last_timestamp_imu < 0.0, "IMU")) return;
+ 
+     mtx_buffer.lock();
+ 
+@@ -926,7 +951,7 @@ public:
+         {
+             sub_pcl_pc_ = this->create_subscription<sensor_msgs::msg::PointCloud2>(lid_topic, rclcpp::SensorDataQoS(), standard_pcl_cbk);
+         }
+-        sub_imu_ = this->create_subscription<sensor_msgs::msg::Imu>(imu_topic, 10, imu_cbk);
++        sub_imu_ = this->create_subscription<sensor_msgs::msg::Imu>(imu_topic, 1000, imu_cbk);
+         pubLaserCloudFull_ = this->create_publisher<sensor_msgs::msg::PointCloud2>("/cloud_registered", 20);
+         pubLaserCloudFull_body_ = this->create_publisher<sensor_msgs::msg::PointCloud2>("/cloud_registered_body", 20);
+         pubLaserCloudEffect_ = this->create_publisher<sensor_msgs::msg::PointCloud2>("/cloud_effected", 20);
+@@ -957,6 +982,7 @@ public:
+ private:
+     void timer_callback()
+     {
++        if (sensor_time_fault) return;
+         if(sync_packages(Measures))
+         {
+             if (flg_first_scan)

@@ -1,0 +1,32 @@
+{
+  "odometry_frames": 1068,
+  "duration_s": 107.99885487556458,
+  "endpoint_displacement_m": 0.02507707597514991,
+  "max_displacement_m": 1.4581561683440103,
+  "endpoint_orientation_error_deg": 6.435094463031181,
+  "last_10s_position_min_max_m": [
+    0.023548504986025263,
+    0.02973255092132655
+  ],
+  "recorded_messages": {
+    "/Odometry": 1082,
+    "/livox/imu": 22020,
+    "/livox/lidar": 1088
+  },
+  "imu_clock_reversals": 0,
+  "clouds_with_duration_over_200ms": 0,
+  "map": {
+    "points": 317651,
+    "all_finite": true,
+    "min_xyz_m": [
+      -25.03339958190918,
+      -13.682929992675781,
+      -1.9641356468200684
+    ],
+    "max_xyz_m": [
+      12.660249710083008,
+      2.3344175815582275,
+      2.3945562839508057
+    ]
+  }
+}

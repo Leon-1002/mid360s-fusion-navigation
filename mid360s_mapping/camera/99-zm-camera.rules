@@ -1,0 +1,1 @@
+SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTR{idVendor}=="2e03", ATTR{idProduct}=="0001", ATTR{serial}=="DD07657AAK00023", OWNER="leon", MODE="0660"

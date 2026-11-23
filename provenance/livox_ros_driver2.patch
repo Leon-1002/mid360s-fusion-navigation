@@ -1,0 +1,73 @@
+diff --git a/src/comm/pub_handler.cpp b/src/comm/pub_handler.cpp
+index e33d588..9479420 100644
+--- a/src/comm/pub_handler.cpp
++++ b/src/comm/pub_handler.cpp
+@@ -193,7 +193,7 @@ void PubHandler::CheckTimer(uint32_t id) {
+       frame_.lidar_num = 0;
+     }
+   } else { // Disable time synchronization
+-    auto now_time = std::chrono::high_resolution_clock::now();
++    auto now_time = std::chrono::steady_clock::now();
+     //First Set
+     static bool first = true;
+     if (first) {
+@@ -271,7 +271,8 @@ uint64_t PubHandler::GetEthPacketTimestamp(uint8_t timestamp_type, uint8_t* time
+     return time.stamp;
+   }
+ 
+-  return std::chrono::high_resolution_clock::now().time_since_epoch().count();
++  static const MonotonicEpochClock<> clock;
++  return clock.Now();
+ }
+ 
+ /*******************************/
+diff --git a/src/comm/pub_handler.h b/src/comm/pub_handler.h
+index 3314d8f..ebd1327 100644
+--- a/src/comm/pub_handler.h
++++ b/src/comm/pub_handler.h
+@@ -26,6 +26,8 @@
+ #define LIVOX_DRIVER_PUB_HANDLER_H_
+ 
+ #include <atomic>
++#include <chrono>
++#include <cstdint>
+ #include <cstring>
+ #include <condition_variable> // std::condition_variable
+ #include <deque>
+@@ -40,6 +42,27 @@
+ 
+ namespace livox_ros {
+ 
++// Anchor once to epoch time; subsequent wall-clock adjustments must not
++// change the relative timing of unsynchronized LiDAR and IMU packets.
++template <class WallClock = std::chrono::system_clock,
++          class SteadyClock = std::chrono::steady_clock>
++class MonotonicEpochClock {
++ public:
++  MonotonicEpochClock()
++      : epoch_ns_(std::chrono::duration_cast<std::chrono::nanoseconds>(
++            WallClock::now().time_since_epoch()).count()),
++        start_(SteadyClock::now()) {}
++
++  uint64_t Now() const {
++    return epoch_ns_ + std::chrono::duration_cast<std::chrono::nanoseconds>(
++                           SteadyClock::now() - start_).count();
++  }
++
++ private:
++  const uint64_t epoch_ns_;
++  const typename SteadyClock::time_point start_;
++};
++
+ class LidarPubHandler {
+  public:
+   LidarPubHandler();
+@@ -76,7 +99,7 @@ class PubHandler {
+  public:
+   using PointCloudsCallback = std::function<void(PointFrame*, void *)>;
+   using ImuDataCallback = std::function<void(ImuData*, void*)>;
+-  using TimePoint = std::chrono::high_resolution_clock::time_point;
++  using TimePoint = std::chrono::steady_clock::time_point;
+ 
+   PubHandler() {}
+ 
