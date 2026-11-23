@@ -1,6 +1,6 @@
 # 原路线与 RTK 预设
 
-状态：接口设计预留；尚无雷达同步验收结果、RTK 设备或 GNSS 锁定结果。
+状态：联合台架时间/触发计数验证已完成，点云 CRC 完整性受限；尚无真实 UTC、RTK 设备或 GNSS 锁定结果。
 
 ## 保留的原项目路线
 
@@ -10,7 +10,7 @@ STM32 PB5 → 雷达 PPS；STM32 PA9 USART1 TX → USB 转 TTL → 电脑；电�
 
 STM32 电平为 3.3 V。USB 转 TTL 的具体设备、串口号及电平需在实测时确认，不能以 ST-LINK 替代串口通道。
 
-原 LIV_handhold 的串口转发存在于旧 Livox ROS1 驱动；当前独立 Windows 台架工具已按 SDK2 的 0x0202 同步协议实现串口转发，协议包与 SDK2 的输出逐字节比对通过；尚未集成进 ROS2 驱动，也未实机验收。只接 PPS 或只编译程序不代表同步完成。现有 camera-pulse-test 仅输出 PA1 相机测试脉冲，不输出雷达 PPS/RMC。
+原 LIV_handhold 的串口转发存在于旧 Livox ROS1 驱动；当前独立 Windows 台架工具已按 SDK2 的 0x0202 同步协议实现串口转发，协议包与 SDK2 的输出逐字节比对通过；尚未集成进 ROS2 驱动；2026-11-23 已完成独立台架联合实测，细节和限制见根目录 README。只接 PPS 或只编译程序不代表同步完成。现有 camera-pulse-test 仅输出 PA1 相机测试脉冲，不输出雷达 PPS/RMC。
 
 未采用的 lidar-sync-test 直连实验只有不完整工程骨架，未生成固件、未烧录，本归档不把它作为可运行成果。
 
@@ -32,4 +32,4 @@ RTK 阶段先验证有效 UTC/PPS，再验证定位质量、杆臂与后端接�
 - https://github.com/xuankuzcr/FAST-LIVO2-RTK
 - https://github.com/Livox-SDK/Livox-SDK2
 
-2026-11-23：新增 `stm32/lidar-pps-uart` 和 `sync-test`。测试固件使用明确标记的合成时间，RMC 状态 V / 模式 N；它不是 GNSS 定位或真实 UTC。测试器临时配置数据流并保存、恢复原值；恢复失败不判成功。相机新线为 1 红、2 白、3 棕、4 绿、5 黄、6 黑，Line2 使用 3/6 脚。联合固件和相位对齐等待分项实测通过后进行。
+2026-11-23：新增 `stm32/lidar-pps-uart` 和 `sync-test`。测试固件使用明确标记的合成时间，RMC 状态 V / 模式 N；它不是 GNSS 定位或真实 UTC。测试器临时配置数据流并保存、恢复原值；恢复失败不判成功。相机新线为 1 红、2 白、3 棕、4 绿、5 黄、6 黑，Line2 使用 3/6 脚。joint-sync-test 已完成联合 300 脉冲 / 300 帧实测；采用硬件定时器固定相位，实际电气/曝光相位仍未外部测量。

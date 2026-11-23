@@ -1,0 +1,197 @@
+{"event": "session", "host_monotonic": 31263.156, "path": "E:\\chatgpt_project\\mid360s_mapping\\sync-test\\sessions\\20261123-173809-449050", "mode": "sync"}
+{"event": "initial_status", "host_monotonic": 31263.156, "work_state": 1, "local_time_ns": 1795393084593044380, "last_sync_ns": 1795392685000000000, "offset_ns": -50610, "sync_type": 2}
+{"event": "stream_config_before", "host_monotonic": 31263.171, "values": {"0x6": "c0a80132eddb0000", "0x7": "c0a8013251dc0000", "0x1a": "01", "0x1c": "01"}}
+{"event": "temporary_stream_config", "host_monotonic": 31263.171, "key": "0x6", "value": "c0a80132eddbecdb"}
+{"event": "temporary_stream_config", "host_monotonic": 31263.171, "key": "0x7", "value": "c0a8013251dc50dc"}
+{"event": "ready", "host_monotonic": 31263.171, "port": "COM8", "mode": "sync", "synthetic_time": true, "message": "Wait for 1 Hz RMC. Do not reset STM32 after synchronization begins."}
+{"event": "progress", "host_monotonic": 31263.171, "rmc": 0, "acks": 0, "matched_status": 0}
+{"event": "rmc", "host_monotonic": 31263.593, "epoch": 1795393085, "cadence_locked": false, "text": "$GPRMC,001805.00,V,,,,,,,231126,,,N*74"}
+{"event": "rmc", "host_monotonic": 31264.593, "epoch": 1795393086, "cadence_locked": false, "text": "$GPRMC,001806.00,V,,,,,,,231126,,,N*77"}
+{"event": "rmc", "host_monotonic": 31265.593, "epoch": 1795393087, "cadence_locked": true, "text": "$GPRMC,001807.00,V,,,,,,,231126,,,N*76"}
+{"event": "time_ack", "host_monotonic": 31265.593, "epoch": 1795393087, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31265.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393087153072450, "last_sync_ns": 1795393087000000000, "offset_ns": -20463850, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31266.593, "epoch": 1795393088, "cadence_locked": true, "text": "$GPRMC,001808.00,V,,,,,,,231126,,,N*79"}
+{"event": "time_ack", "host_monotonic": 31266.593, "epoch": 1795393088, "host_forward_ack_ms": 0.0}
+{"event": "steady_window_started", "host_monotonic": 31266.718, "acquisition_seconds": 3.547, "minimum_steady_seconds": 10, "total_before_steady": {"lidar": {"packets": 7415, "gps_packets": 6519, "regressions": 0, "wrong_epoch": 0, "invalid": 0, "crc_verified": 0, "crc_unavailable": 7415, "non_gps": 0, "last_gps_ns": 1795393088151567550, "last_gps_host_monotonic": 31266.718, "types": {"2": 7415}}, "imu": {"packets": 711, "gps_packets": 625, "regressions": 0, "wrong_epoch": 0, "invalid": 0, "crc_verified": 711, "crc_unavailable": 0, "non_gps": 0, "last_gps_ns": 1795393088148788290, "last_gps_host_monotonic": 31266.718, "types": {"2": 711}}}}
+{"event": "radar_status", "host_monotonic": 31266.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393088148788290, "last_sync_ns": 1795393088000000000, "offset_ns": -20515860, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31267.593, "epoch": 1795393089, "cadence_locked": true, "text": "$GPRMC,001809.00,V,,,,,,,231126,,,N*78"}
+{"event": "time_ack", "host_monotonic": 31267.593, "epoch": 1795393089, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31267.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393089169392070, "last_sync_ns": 1795393089000000000, "offset_ns": -20567910, "sync_type": 2}
+{"event": "progress", "host_monotonic": 31268.171, "rmc": 5, "acks": 3, "matched_status": 3}
+{"event": "rmc", "host_monotonic": 31268.578, "epoch": 1795393090, "cadence_locked": true, "text": "$GPRMC,001810.00,V,,,,,,,231126,,,N*70"}
+{"event": "time_ack", "host_monotonic": 31268.593, "epoch": 1795393090, "host_forward_ack_ms": 15.0}
+{"event": "radar_status", "host_monotonic": 31268.703, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393090153705340, "last_sync_ns": 1795393090000000000, "offset_ns": -53100, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31269.593, "epoch": 1795393091, "cadence_locked": true, "text": "$GPRMC,001811.00,V,,,,,,,231126,,,N*71"}
+{"event": "time_ack", "host_monotonic": 31269.593, "epoch": 1795393091, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31269.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393091173672430, "last_sync_ns": 1795393091000000000, "offset_ns": -53120, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31270.593, "epoch": 1795393092, "cadence_locked": true, "text": "$GPRMC,001812.00,V,,,,,,,231126,,,N*72"}
+{"event": "time_ack", "host_monotonic": 31270.593, "epoch": 1795393092, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31270.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393092169495250, "last_sync_ns": 1795393092000000000, "offset_ns": -53140, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31271.593, "epoch": 1795393093, "cadence_locked": true, "text": "$GPRMC,001813.00,V,,,,,,,231126,,,N*73"}
+{"event": "time_ack", "host_monotonic": 31271.593, "epoch": 1795393093, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31271.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393093169606040, "last_sync_ns": 1795393093000000000, "offset_ns": -53170, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31272.593, "epoch": 1795393094, "cadence_locked": true, "text": "$GPRMC,001814.00,V,,,,,,,231126,,,N*74"}
+{"event": "time_ack", "host_monotonic": 31272.593, "epoch": 1795393094, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31272.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393094169663840, "last_sync_ns": 1795393094000000000, "offset_ns": -53190, "sync_type": 2}
+{"event": "progress", "host_monotonic": 31273.171, "rmc": 10, "acks": 8, "matched_status": 8}
+{"event": "rmc", "host_monotonic": 31273.578, "epoch": 1795393095, "cadence_locked": true, "text": "$GPRMC,001815.00,V,,,,,,,231126,,,N*75"}
+{"event": "time_ack", "host_monotonic": 31273.593, "epoch": 1795393095, "host_forward_ack_ms": 15.0}
+{"event": "radar_status", "host_monotonic": 31273.703, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393095153945500, "last_sync_ns": 1795393095000000000, "offset_ns": -53210, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31274.593, "epoch": 1795393096, "cadence_locked": true, "text": "$GPRMC,001816.00,V,,,,,,,231126,,,N*76"}
+{"event": "time_ack", "host_monotonic": 31274.593, "epoch": 1795393096, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31274.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393096169705360, "last_sync_ns": 1795393096000000000, "offset_ns": -53220, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31275.578, "epoch": 1795393097, "cadence_locked": true, "text": "$GPRMC,001817.00,V,,,,,,,231126,,,N*77"}
+{"event": "time_ack", "host_monotonic": 31275.593, "epoch": 1795393097, "host_forward_ack_ms": 15.0}
+{"event": "radar_status", "host_monotonic": 31275.703, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393097154220280, "last_sync_ns": 1795393097000000000, "offset_ns": -53260, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31276.578, "epoch": 1795393098, "cadence_locked": true, "text": "$GPRMC,001818.00,V,,,,,,,231126,,,N*78"}
+{"event": "time_ack", "host_monotonic": 31276.593, "epoch": 1795393098, "host_forward_ack_ms": 15.0}
+{"event": "radar_status", "host_monotonic": 31276.703, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393098154124110, "last_sync_ns": 1795393098000000000, "offset_ns": -53280, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31277.593, "epoch": 1795393099, "cadence_locked": true, "text": "$GPRMC,001819.00,V,,,,,,,231126,,,N*79"}
+{"event": "time_ack", "host_monotonic": 31277.593, "epoch": 1795393099, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31277.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393099169824440, "last_sync_ns": 1795393099000000000, "offset_ns": -53300, "sync_type": 2}
+{"event": "progress", "host_monotonic": 31278.171, "rmc": 15, "acks": 13, "matched_status": 13}
+{"event": "rmc", "host_monotonic": 31278.593, "epoch": 1795393100, "cadence_locked": true, "text": "$GPRMC,001820.00,V,,,,,,,231126,,,N*73"}
+{"event": "time_ack", "host_monotonic": 31278.593, "epoch": 1795393100, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31278.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393100169982900, "last_sync_ns": 1795393100000000000, "offset_ns": -53320, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31279.593, "epoch": 1795393101, "cadence_locked": true, "text": "$GPRMC,001821.00,V,,,,,,,231126,,,N*72"}
+{"event": "time_ack", "host_monotonic": 31279.593, "epoch": 1795393101, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31279.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393101174360970, "last_sync_ns": 1795393101000000000, "offset_ns": -53360, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31280.593, "epoch": 1795393102, "cadence_locked": true, "text": "$GPRMC,001822.00,V,,,,,,,231126,,,N*71"}
+{"event": "time_ack", "host_monotonic": 31280.593, "epoch": 1795393102, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31280.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393102174284410, "last_sync_ns": 1795393102000000000, "offset_ns": -53360, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31281.593, "epoch": 1795393103, "cadence_locked": true, "text": "$GPRMC,001823.00,V,,,,,,,231126,,,N*70"}
+{"event": "time_ack", "host_monotonic": 31281.593, "epoch": 1795393103, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31281.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393103180143960, "last_sync_ns": 1795393103000000000, "offset_ns": -53400, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31282.593, "epoch": 1795393104, "cadence_locked": true, "text": "$GPRMC,001824.00,V,,,,,,,231126,,,N*77"}
+{"event": "time_ack", "host_monotonic": 31282.593, "epoch": 1795393104, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31282.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393104174430700, "last_sync_ns": 1795393104000000000, "offset_ns": -53410, "sync_type": 2}
+{"event": "progress", "host_monotonic": 31283.171, "rmc": 20, "acks": 18, "matched_status": 18}
+{"event": "rmc", "host_monotonic": 31283.593, "epoch": 1795393105, "cadence_locked": true, "text": "$GPRMC,001825.00,V,,,,,,,231126,,,N*76"}
+{"event": "time_ack", "host_monotonic": 31283.593, "epoch": 1795393105, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31283.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393105170252220, "last_sync_ns": 1795393105000000000, "offset_ns": -53430, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31284.593, "epoch": 1795393106, "cadence_locked": true, "text": "$GPRMC,001826.00,V,,,,,,,231126,,,N*75"}
+{"event": "time_ack", "host_monotonic": 31284.593, "epoch": 1795393106, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31284.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393106174557250, "last_sync_ns": 1795393106000000000, "offset_ns": -53460, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31285.578, "epoch": 1795393107, "cadence_locked": true, "text": "$GPRMC,001827.00,V,,,,,,,231126,,,N*74"}
+{"event": "time_ack", "host_monotonic": 31285.593, "epoch": 1795393107, "host_forward_ack_ms": 15.0}
+{"event": "radar_status", "host_monotonic": 31285.703, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393107154533560, "last_sync_ns": 1795393107000000000, "offset_ns": -53480, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31286.593, "epoch": 1795393108, "cadence_locked": true, "text": "$GPRMC,001828.00,V,,,,,,,231126,,,N*7B"}
+{"event": "time_ack", "host_monotonic": 31286.593, "epoch": 1795393108, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31286.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393108174660440, "last_sync_ns": 1795393108000000000, "offset_ns": -53490, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31287.593, "epoch": 1795393109, "cadence_locked": true, "text": "$GPRMC,001829.00,V,,,,,,,231126,,,N*7A"}
+{"event": "time_ack", "host_monotonic": 31287.593, "epoch": 1795393109, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31287.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393109170367900, "last_sync_ns": 1795393109000000000, "offset_ns": -53530, "sync_type": 2}
+{"event": "progress", "host_monotonic": 31288.171, "rmc": 25, "acks": 23, "matched_status": 23}
+{"event": "rmc", "host_monotonic": 31288.593, "epoch": 1795393110, "cadence_locked": true, "text": "$GPRMC,001830.00,V,,,,,,,231126,,,N*72"}
+{"event": "time_ack", "host_monotonic": 31288.593, "epoch": 1795393110, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31288.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393110174643460, "last_sync_ns": 1795393110000000000, "offset_ns": -53540, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31289.593, "epoch": 1795393111, "cadence_locked": true, "text": "$GPRMC,001831.00,V,,,,,,,231126,,,N*73"}
+{"event": "time_ack", "host_monotonic": 31289.593, "epoch": 1795393111, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31289.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393111170577840, "last_sync_ns": 1795393111000000000, "offset_ns": -53570, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31290.593, "epoch": 1795393112, "cadence_locked": true, "text": "$GPRMC,001832.00,V,,,,,,,231126,,,N*70"}
+{"event": "time_ack", "host_monotonic": 31290.593, "epoch": 1795393112, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31290.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393112170631680, "last_sync_ns": 1795393112000000000, "offset_ns": -53580, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31291.593, "epoch": 1795393113, "cadence_locked": true, "text": "$GPRMC,001833.00,V,,,,,,,231126,,,N*71"}
+{"event": "time_ack", "host_monotonic": 31291.593, "epoch": 1795393113, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31291.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393113170684570, "last_sync_ns": 1795393113000000000, "offset_ns": -53610, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31292.593, "epoch": 1795393114, "cadence_locked": true, "text": "$GPRMC,001834.00,V,,,,,,,231126,,,N*76"}
+{"event": "time_ack", "host_monotonic": 31292.593, "epoch": 1795393114, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31292.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393114170740880, "last_sync_ns": 1795393114000000000, "offset_ns": -53630, "sync_type": 2}
+{"event": "progress", "host_monotonic": 31293.171, "rmc": 30, "acks": 28, "matched_status": 28}
+{"event": "rmc", "host_monotonic": 31293.593, "epoch": 1795393115, "cadence_locked": true, "text": "$GPRMC,001835.00,V,,,,,,,231126,,,N*77"}
+{"event": "time_ack", "host_monotonic": 31293.593, "epoch": 1795393115, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31293.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393115170721820, "last_sync_ns": 1795393115000000000, "offset_ns": -53650, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31294.593, "epoch": 1795393116, "cadence_locked": true, "text": "$GPRMC,001836.00,V,,,,,,,231126,,,N*74"}
+{"event": "time_ack", "host_monotonic": 31294.593, "epoch": 1795393116, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31294.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393116170727200, "last_sync_ns": 1795393116000000000, "offset_ns": -53670, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31295.593, "epoch": 1795393117, "cadence_locked": true, "text": "$GPRMC,001837.00,V,,,,,,,231126,,,N*75"}
+{"event": "time_ack", "host_monotonic": 31295.593, "epoch": 1795393117, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31295.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393117170901490, "last_sync_ns": 1795393117000000000, "offset_ns": -53690, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31296.593, "epoch": 1795393118, "cadence_locked": true, "text": "$GPRMC,001838.00,V,,,,,,,231126,,,N*7A"}
+{"event": "time_ack", "host_monotonic": 31296.593, "epoch": 1795393118, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31296.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393118170791400, "last_sync_ns": 1795393118000000000, "offset_ns": -53210, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31297.593, "epoch": 1795393119, "cadence_locked": true, "text": "$GPRMC,001839.00,V,,,,,,,231126,,,N*7B"}
+{"event": "time_ack", "host_monotonic": 31297.593, "epoch": 1795393119, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31297.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393119171010120, "last_sync_ns": 1795393119000000000, "offset_ns": -53250, "sync_type": 2}
+{"event": "progress", "host_monotonic": 31298.171, "rmc": 35, "acks": 33, "matched_status": 33}
+{"event": "rmc", "host_monotonic": 31298.593, "epoch": 1795393120, "cadence_locked": true, "text": "$GPRMC,001840.00,V,,,,,,,231126,,,N*75"}
+{"event": "time_ack", "host_monotonic": 31298.593, "epoch": 1795393120, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31298.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393120175295590, "last_sync_ns": 1795393120000000000, "offset_ns": -53260, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31299.593, "epoch": 1795393121, "cadence_locked": true, "text": "$GPRMC,001841.00,V,,,,,,,231126,,,N*74"}
+{"event": "time_ack", "host_monotonic": 31299.593, "epoch": 1795393121, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31299.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393121171082840, "last_sync_ns": 1795393121000000000, "offset_ns": -53280, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31300.593, "epoch": 1795393122, "cadence_locked": true, "text": "$GPRMC,001842.00,V,,,,,,,231126,,,N*77"}
+{"event": "time_ack", "host_monotonic": 31300.593, "epoch": 1795393122, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31300.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393122171172930, "last_sync_ns": 1795393122000000000, "offset_ns": -53300, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31301.578, "epoch": 1795393123, "cadence_locked": true, "text": "$GPRMC,001843.00,V,,,,,,,231126,,,N*76"}
+{"event": "time_ack", "host_monotonic": 31301.593, "epoch": 1795393123, "host_forward_ack_ms": 15.0}
+{"event": "radar_status", "host_monotonic": 31301.703, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393123155300040, "last_sync_ns": 1795393123000000000, "offset_ns": -53330, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31302.593, "epoch": 1795393124, "cadence_locked": true, "text": "$GPRMC,001844.00,V,,,,,,,231126,,,N*71"}
+{"event": "time_ack", "host_monotonic": 31302.593, "epoch": 1795393124, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31302.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393124171294830, "last_sync_ns": 1795393124000000000, "offset_ns": -53340, "sync_type": 2}
+{"event": "progress", "host_monotonic": 31303.171, "rmc": 40, "acks": 38, "matched_status": 38}
+{"event": "rmc", "host_monotonic": 31303.593, "epoch": 1795393125, "cadence_locked": true, "text": "$GPRMC,001845.00,V,,,,,,,231126,,,N*70"}
+{"event": "time_ack", "host_monotonic": 31303.593, "epoch": 1795393125, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31303.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393125171334060, "last_sync_ns": 1795393125000000000, "offset_ns": -53370, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31304.593, "epoch": 1795393126, "cadence_locked": true, "text": "$GPRMC,001846.00,V,,,,,,,231126,,,N*73"}
+{"event": "time_ack", "host_monotonic": 31304.593, "epoch": 1795393126, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31304.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393126171341130, "last_sync_ns": 1795393126000000000, "offset_ns": -53390, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31305.593, "epoch": 1795393127, "cadence_locked": true, "text": "$GPRMC,001847.00,V,,,,,,,231126,,,N*72"}
+{"event": "time_ack", "host_monotonic": 31305.593, "epoch": 1795393127, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31305.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393127171358240, "last_sync_ns": 1795393127000000000, "offset_ns": -53400, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31306.578, "epoch": 1795393128, "cadence_locked": true, "text": "$GPRMC,001848.00,V,,,,,,,231126,,,N*7D"}
+{"event": "time_ack", "host_monotonic": 31306.593, "epoch": 1795393128, "host_forward_ack_ms": 15.0}
+{"event": "radar_status", "host_monotonic": 31306.703, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393128155725040, "last_sync_ns": 1795393128000000000, "offset_ns": -53430, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31307.578, "epoch": 1795393129, "cadence_locked": true, "text": "$GPRMC,001849.00,V,,,,,,,231126,,,N*7C"}
+{"event": "time_ack", "host_monotonic": 31307.578, "epoch": 1795393129, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31307.703, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393129155773920, "last_sync_ns": 1795393129000000000, "offset_ns": -53450, "sync_type": 2}
+{"event": "progress", "host_monotonic": 31308.171, "rmc": 45, "acks": 43, "matched_status": 43}
+{"event": "rmc", "host_monotonic": 31308.593, "epoch": 1795393130, "cadence_locked": true, "text": "$GPRMC,001850.00,V,,,,,,,231126,,,N*74"}
+{"event": "time_ack", "host_monotonic": 31308.593, "epoch": 1795393130, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31308.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393130171525640, "last_sync_ns": 1795393130000000000, "offset_ns": -53470, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31309.593, "epoch": 1795393131, "cadence_locked": true, "text": "$GPRMC,001851.00,V,,,,,,,231126,,,N*75"}
+{"event": "time_ack", "host_monotonic": 31309.593, "epoch": 1795393131, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31309.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393131175940810, "last_sync_ns": 1795393131000000000, "offset_ns": -53500, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31310.593, "epoch": 1795393132, "cadence_locked": true, "text": "$GPRMC,001852.00,V,,,,,,,231126,,,N*76"}
+{"event": "time_ack", "host_monotonic": 31310.593, "epoch": 1795393132, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31310.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393132175965630, "last_sync_ns": 1795393132000000000, "offset_ns": -53510, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31311.593, "epoch": 1795393133, "cadence_locked": true, "text": "$GPRMC,001853.00,V,,,,,,,231126,,,N*77"}
+{"event": "time_ack", "host_monotonic": 31311.593, "epoch": 1795393133, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31311.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393133171765520, "last_sync_ns": 1795393133000000000, "offset_ns": -53550, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31312.593, "epoch": 1795393134, "cadence_locked": true, "text": "$GPRMC,001854.00,V,,,,,,,231126,,,N*70"}
+{"event": "time_ack", "host_monotonic": 31312.593, "epoch": 1795393134, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31312.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393134171821560, "last_sync_ns": 1795393134000000000, "offset_ns": -53560, "sync_type": 2}
+{"event": "progress", "host_monotonic": 31313.171, "rmc": 50, "acks": 48, "matched_status": 48}
+{"event": "rmc", "host_monotonic": 31313.593, "epoch": 1795393135, "cadence_locked": true, "text": "$GPRMC,001855.00,V,,,,,,,231126,,,N*71"}
+{"event": "time_ack", "host_monotonic": 31313.593, "epoch": 1795393135, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31313.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393135171874580, "last_sync_ns": 1795393135000000000, "offset_ns": -53590, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31314.578, "epoch": 1795393136, "cadence_locked": true, "text": "$GPRMC,001856.00,V,,,,,,,231126,,,N*72"}
+{"event": "time_ack", "host_monotonic": 31314.578, "epoch": 1795393136, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31314.703, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393136156165790, "last_sync_ns": 1795393136000000000, "offset_ns": -53600, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31315.593, "epoch": 1795393137, "cadence_locked": true, "text": "$GPRMC,001857.00,V,,,,,,,231126,,,N*73"}
+{"event": "time_ack", "host_monotonic": 31315.593, "epoch": 1795393137, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31315.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393137171982730, "last_sync_ns": 1795393137000000000, "offset_ns": -53630, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31316.593, "epoch": 1795393138, "cadence_locked": true, "text": "$GPRMC,001858.00,V,,,,,,,231126,,,N*7C"}
+{"event": "time_ack", "host_monotonic": 31316.593, "epoch": 1795393138, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31316.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393138172038210, "last_sync_ns": 1795393138000000000, "offset_ns": -53650, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31317.593, "epoch": 1795393139, "cadence_locked": true, "text": "$GPRMC,001859.00,V,,,,,,,231126,,,N*7D"}
+{"event": "time_ack", "host_monotonic": 31317.593, "epoch": 1795393139, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31317.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393139172092780, "last_sync_ns": 1795393139000000000, "offset_ns": -53670, "sync_type": 2}
+{"event": "progress", "host_monotonic": 31318.171, "rmc": 55, "acks": 53, "matched_status": 53}
+{"event": "rmc", "host_monotonic": 31318.593, "epoch": 1795393140, "cadence_locked": true, "text": "$GPRMC,001900.00,V,,,,,,,231126,,,N*70"}
+{"event": "time_ack", "host_monotonic": 31318.593, "epoch": 1795393140, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31318.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393140172045440, "last_sync_ns": 1795393140000000000, "offset_ns": -53680, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31319.578, "epoch": 1795393141, "cadence_locked": true, "text": "$GPRMC,001901.00,V,,,,,,,231126,,,N*71"}
+{"event": "time_ack", "host_monotonic": 31319.593, "epoch": 1795393141, "host_forward_ack_ms": 15.0}
+{"event": "radar_status", "host_monotonic": 31319.703, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393141156457970, "last_sync_ns": 1795393141000000000, "offset_ns": -53710, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31320.593, "epoch": 1795393142, "cadence_locked": true, "text": "$GPRMC,001902.00,V,,,,,,,231126,,,N*72"}
+{"event": "time_ack", "host_monotonic": 31320.593, "epoch": 1795393142, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31320.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393142172257750, "last_sync_ns": 1795393142000000000, "offset_ns": -53730, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31321.578, "epoch": 1795393143, "cadence_locked": true, "text": "$GPRMC,001903.00,V,,,,,,,231126,,,N*73"}
+{"event": "time_ack", "host_monotonic": 31321.593, "epoch": 1795393143, "host_forward_ack_ms": 15.0}
+{"event": "radar_status", "host_monotonic": 31321.703, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393143156603620, "last_sync_ns": 1795393143000000000, "offset_ns": -53760, "sync_type": 2}
+{"event": "rmc", "host_monotonic": 31322.593, "epoch": 1795393144, "cadence_locked": true, "text": "$GPRMC,001904.00,V,,,,,,,231126,,,N*74"}
+{"event": "time_ack", "host_monotonic": 31322.593, "epoch": 1795393144, "host_forward_ack_ms": 0.0}
+{"event": "radar_status", "host_monotonic": 31322.718, "matched_current_pps": true, "clock_settled": true, "work_state": 1, "local_time_ns": 1795393144176645540, "last_sync_ns": 1795393144000000000, "offset_ns": -53770, "sync_type": 2}
+{"event": "stream_restore", "host_monotonic": 31323.171, "success": true, "errors": []}
+{"event": "summary", "host_monotonic": 31323.171, "mode": "sync", "synthetic_time": true, "real_utc_valid": false, "rmc_count": 60, "time_command_acks": 58, "matched_status_count": 58, "result": "TIMING_PASS_CRC_UNAVAILABLE", "data": {"lidar": {"packets": 125024, "gps_packets": 124128, "regressions": 0, "wrong_epoch": 0, "invalid": 0, "crc_verified": 0, "crc_unavailable": 125024, "non_gps": 0, "last_gps_ns": 1795393144625197340, "last_gps_host_monotonic": 31323.171, "types": {"2": 125024}}, "imu": {"packets": 12001, "gps_packets": 11915, "regressions": 0, "wrong_epoch": 0, "invalid": 0, "crc_verified": 12001, "crc_unavailable": 0, "non_gps": 0, "last_gps_ns": 1795393144622367040, "last_gps_host_monotonic": 31323.171, "types": {"2": 12001}}}, "steady_seconds": 56.453, "steady_status_errors": 0, "payload_integrity_verified": false, "steady_data": {"lidar": {"packets": 117609, "gps_packets": 117609, "regressions": 0, "wrong_epoch": 0, "invalid": 0, "crc_verified": 0, "crc_unavailable": 117609, "non_gps": 0, "last_gps_ns": 1795393144625197340, "last_gps_host_monotonic": 31323.171, "types": {"2": 117609}}, "imu": {"packets": 11290, "gps_packets": 11290, "regressions": 0, "wrong_epoch": 0, "invalid": 0, "crc_verified": 11290, "crc_unavailable": 0, "non_gps": 0, "last_gps_ns": 1795393144622367040, "last_gps_host_monotonic": 31323.171, "types": {"2": 11290}}}, "restore_errors": []}

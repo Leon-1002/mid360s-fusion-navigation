@@ -1,0 +1,17 @@
+{
+  "TriggerSelector": "FrameStart",
+  "TriggerMode": "Off",
+  "LineSelector": "Line0",
+  "LineMode": "Input",
+  "LineInverter": false,
+  "TriggerSource": "Software",
+  "TriggerActivation": "RisingEdge",
+  "AcquisitionMode": "Continuous",
+  "ExposureAuto": "Off",
+  "GainAuto": "Off",
+  "ExposureTime": 10000.0,
+  "GainRaw": 1.0,
+  "PixelFormat": "BayerRG8",
+  "Width": 3072,
+  "Height": 2048
+}

@@ -1,0 +1,102 @@
+{
+  "lidar": [
+    {
+      "source": [
+        "192.168.1.119",
+        56300
+      ],
+      "bytes": 1380,
+      "version": 0,
+      "declared_length": 1380,
+      "dot_num": 96,
+      "data_type": 1,
+      "time_type": 2,
+      "crc_field": "0x0",
+      "crc_computed": "0xd3cb5c85",
+      "timestamp": 1795392755484207550,
+      "header_hex": "0064058e126000238700010200000000000000000000000000000000be29f2de3284ea18"
+    },
+    {
+      "source": [
+        "192.168.1.119",
+        56300
+      ],
+      "bytes": 1380,
+      "version": 0,
+      "declared_length": 1380,
+      "dot_num": 96,
+      "data_type": 1,
+      "time_type": 2,
+      "crc_field": "0x0",
+      "crc_computed": "0xa07c556f",
+      "timestamp": 1795392755484687550,
+      "header_hex": "0064058e126000248700010200000000000000000000000000000000be7cf9de3284ea18"
+    },
+    {
+      "source": [
+        "192.168.1.119",
+        56300
+      ],
+      "bytes": 1380,
+      "version": 0,
+      "declared_length": 1380,
+      "dot_num": 96,
+      "data_type": 1,
+      "time_type": 2,
+      "crc_field": "0x0",
+      "crc_computed": "0xfa5c4744",
+      "timestamp": 1795392755485167550,
+      "header_hex": "0064058e126000258700010200000000000000000000000000000000becf00df3284ea18"
+    }
+  ],
+  "imu": [
+    {
+      "source": [
+        "192.168.1.119",
+        56400
+      ],
+      "bytes": 60,
+      "version": 0,
+      "declared_length": 60,
+      "dot_num": 1,
+      "data_type": 0,
+      "time_type": 2,
+      "crc_field": "0x8baaf9dd",
+      "crc_computed": "0x8baaf9dd",
+      "timestamp": 1795392755488348330,
+      "header_hex": "003c00000001006ea0000002000000000000000000000000ddf9aa8baa5831df3284ea18"
+    },
+    {
+      "source": [
+        "192.168.1.119",
+        56400
+      ],
+      "bytes": 60,
+      "version": 0,
+      "declared_length": 60,
+      "dot_num": 1,
+      "data_type": 0,
+      "time_type": 2,
+      "crc_field": "0x73dc95f0",
+      "crc_computed": "0x73dc95f0",
+      "timestamp": 1795392755492358850,
+      "header_hex": "003c00000001006fa0000002000000000000000000000000f095dc73c28a6edf3284ea18"
+    },
+    {
+      "source": [
+        "192.168.1.119",
+        56400
+      ],
+      "bytes": 60,
+      "version": 0,
+      "declared_length": 60,
+      "dot_num": 1,
+      "data_type": 0,
+      "time_type": 2,
+      "crc_field": "0xcd9e32db",
+      "crc_computed": "0xcd9e32db",
+      "timestamp": 1795392755498312850,
+      "header_hex": "003c000000010070a0000002000000000000000000000000db329ecd9264c9df3284ea18"
+    }
+  ]
+}

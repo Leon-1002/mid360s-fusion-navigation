@@ -1,0 +1,56 @@
+相机 + Mid-360S + STM32 联合硬件触发验收，2026-11-23 17:54
+
+结果：JOINT_TIMING_PASS_CRC_UNAVAILABLE。
+一台 STM32 的 PB5 输出 PPS、PA9 输出 RMC（经 COM8 与电脑以太网转发给雷达），
+PA1 输出相机 Line2 触发。相机 300 脉冲对应 300 连续帧，雷达同期稳定校时。
+这是联合台架的计数与时间连续性结果，不是完整 ROS 融合或真实 UTC 验收。
+
+证据目录：sessions/joint-20261123-175440/
+summary.json：最终统计及恢复结果。
+events.jsonl：每条 RMC、雷达校时 ACK、状态、相机帧号及 MCU 进度。
+frame-trigger-correspondence.jsonl：300 帧与定时器计划触发时间的对应表。
+camera-settings-before.json：操作前相机设置（退出时恢复并读回核对）。
+
+实际结果
+- 相机：300 帧 / 300 个脉冲，主机观察约 5.001505 FPS。
+- 帧号不连续 0，设备时间戳非递增 0，状态/尺寸/像素格式异常 0。
+- BayerRG8，3072 x 2048，曝光 30000 us，GainRaw 2.0；原生 Windows SDK 采集。
+- 雷达：75 条 RMC，73 次校时 ACK，最后连续 72 次状态与当前秒值匹配。
+- 雷达稳定窗口 69.328 秒：144437 个点云包、13865 个 IMU 包，均为类型 2。
+- 稳定窗口两路回退、秒值范围异常、非 GPS 类型、结构无效包、状态异常均为 0。
+- IMU CRC 正常；点云 CRC 字段零，无法验证其载荷完整性，未记为完整 BENCH_PASS。
+- 雷达临时配置恢复成功；相机恢复成功；cleanup_errors=[]。
+- STM32 当前保留联合固件，camera_state=3，300 帧批次已停止；PPS/RMC 继续输出。
+  本次电脑转发和相机采集程序均已退出，没有后台建图任务。
+
+启动阶段的原始异常没有删除：首次校时过渡中 1982 点云包、190 IMU 包秒值不在
+验收范围，且先存在未同步类型。约 5.672 秒后状态/时钟连续匹配才开始稳定窗口，
+相机在这之后才被 arm。本次进一步证实必须把首次校时过渡与稳定采集分开。
+GetFrame 的 -119 是安装 SDK C 头文件定义的超时；100 ms 轮询短于 200 ms 帧间隔，
+脉冲间及批次前后等待出现超时，全部保留在日志，不能把它直接算成丢帧。
+
+实现和保护
+- 独立新工程 stm32/joint-sync-test，原 camera-pulse-test 和 lidar-pps-uart 保留。
+- Keil AC5 构建成功、下载 Verify OK；随后通过 ST-LINK 完整镜像读回比对。
+- 下载前保存原 STM32 64 KB Flash：stm32/before-joint-20261123-174902/flash-64k.bin。
+- 使用 TIM3 OC2REF -> TIM2 ITR2 硬件启动，相机 5 Hz / 10 ms，PPS 1 Hz / 100 ms。
+  计划相位 PPS +190 ms，此后每 200 ms 一帧；300 脉冲在下降沿停止。
+- 新增五项联合验收单元测试全部通过，验证少/多帧、脉冲不匹配、跳号、时戳回退、
+  坏帧、格式和帧率异常会被拒绝；雷达测试器此前 11 项测试通过。
+- 相机 SDK 的 TriggerActivation 需在 TriggerMode=On 后访问；已按实际设备修正。
+  Windows DLL 搜索路径只对本测试进程设置，未改变系统环境变量或驱动。
+
+运行方法
+关闭 MV Viewer/Livox Viewer/ROS 雷达采集，保留 COM8、ST-LINK、相机 Windows USB。
+PowerShell 执行：
+  & 'E:\chatgpt_project\mid360s_mapping\sync-test\start-joint.ps1' -Port COM8
+无需手动按键，程序确认相机就绪及雷达稳定后自动执行 300 脉冲批次。
+结果退出码 3 表示点云 CRC 不可验的限制结果；0 才是完整 JOINT_BENCH_PASS，2 为失败。
+换固件或重启 STM32 后需重新建立台架时间，测试期间不要按 RESET。
+
+明确未完成
+- 未使用示波器/曝光反馈测量电气边沿和实际曝光相位。
+- 对应表使用定时器计划值，不等于相机 SDK 时间戳或 ROS header.stamp 已统一。
+- Windows 原生 SDK 的 5 FPS 不代表 WSL/ROS image_raw 传输已达标。
+- 真实 GNSS UTC、RTK、相机标定、外参、视觉融合、导航均未在此轮验证。
+下一阶段为持续同步采集、相机时间戳关联及 ROS 原始图像传输验收。

@@ -10,6 +10,26 @@
     "sha256": "b8bba430ee83a335f705c379ce72a60178c0d96d84dd8f273d8b106985657af4"
   },
   {
+    "path": "artifacts/joint-sync-test/joint-sync-test.axf",
+    "bytes": 355680,
+    "sha256": "c09acead4fa7c1bfdd4ceae3ed3267ded362f74d7eab5a713509db5a269eba1a"
+  },
+  {
+    "path": "artifacts/joint-sync-test/joint-sync-test.bin",
+    "bytes": 9512,
+    "sha256": "fcfabffe4f65711a605ada1a08ca3be8bbddbda79ea670e9f720253bf6816dbf"
+  },
+  {
+    "path": "artifacts/joint-sync-test/joint-sync-test.hex",
+    "bytes": 26810,
+    "sha256": "6d6ef51c27b95bbc09725ea7861c5473cc3c29a3105bc0fe2e03bb05e40582b3"
+  },
+  {
+    "path": "artifacts/joint-sync-test/joint-sync-test.map",
+    "bytes": 74163,
+    "sha256": "44a1b8ad31fb2a9ac6987957e7df31f73783bf8c961f8a682dccb2e769382ece"
+  },
+  {
     "path": "config/future_rtk.template.json",
     "bytes": 803,
     "sha256": "f498f04ed39612bed4dd2a6060cfd2b147ca88607af31a3268225f54e3693cf9"
@@ -26,8 +46,8 @@
   },
   {
     "path": "docs/SYNC_RTK.md",
-    "bytes": 3063,
-    "sha256": "61108ce1bb97eb693b8c50e5cc12bfa6cc854532538b131af9df7dbd9247090a"
+    "bytes": 3249,
+    "sha256": "e2bd30ddea31d575d556742d8dd06965f3c2aa7042613c5ae671f9372b814634"
   },
   {
     "path": "evidence/room-test-20261119/clock_motion_audit.json",
@@ -58,6 +78,41 @@
     "path": "evidence/stm32/idle-fix-build.log",
     "bytes": 342,
     "sha256": "0755c6c40bbbdd1dd1c681b24fd1aae9aaae4020b2941f18d4dd5720720ebe4a"
+  },
+  {
+    "path": "evidence/sync/20261123-173809-449050/events.jsonl",
+    "bytes": 32349,
+    "sha256": "1b34cbced62587eb762f1c432f3bc87c6ac86d1716fe5f02edb13a4c422eeabf"
+  },
+  {
+    "path": "evidence/sync/20261123-173809-449050/summary.json",
+    "bytes": 1827,
+    "sha256": "a18953e41cf2475b3cae1eabd903c27ef26acc573d0acb7739498012886e484d"
+  },
+  {
+    "path": "evidence/sync/headers-20261123-173240.json",
+    "bytes": 2621,
+    "sha256": "2ac51796aa5a9a3098057d14e9ceb1eb506ee0af38ce166f8a24a14214cbebe0"
+  },
+  {
+    "path": "evidence/sync/joint-20261123-175440/camera-settings-before.json",
+    "bytes": 410,
+    "sha256": "c704cd7c69babc69f10e8e50719c296f100f6660d24a4931754ff1601c5550f3"
+  },
+  {
+    "path": "evidence/sync/joint-20261123-175440/events.jsonl",
+    "bytes": 114269,
+    "sha256": "6d0a4944903ff2044cb74dcb420d3d018a1779cc8aee3d6b81bd2c21661f7ca8"
+  },
+  {
+    "path": "evidence/sync/joint-20261123-175440/frame-trigger-correspondence.jsonl",
+    "bytes": 48792,
+    "sha256": "884f268d02ea39ead66e1a7e6ac8c3398b3cf03515d79f859483843d6b83e88a"
+  },
+  {
+    "path": "evidence/sync/joint-20261123-175440/summary.json",
+    "bytes": 25673,
+    "sha256": "0c028cbfb3eb3ee48e46d7dc5213f16ba38e7e53b7f2417914a6e5ab4217acf2"
   },
   {
     "path": "mid360s_mapping/adjust_startup_guard.py",
@@ -140,14 +195,19 @@
     "sha256": "280a5604d52f73ec978bb44953c4a5a35850bb654118855a4de5d4f8adf1113c"
   },
   {
+    "path": "mid360s_mapping/camera/start-line2.ps1",
+    "bytes": 600,
+    "sha256": "f76552e2f4d6be83f580cd2484a24faecac4dd77631bb21fa05d8945b0dd1626"
+  },
+  {
     "path": "mid360s_mapping/camera/启动相机.ps1",
     "bytes": 1458,
     "sha256": "ba4b47f8f0a5cde87550b6267e3b5fc556475b7298f79ea7c708b632238cb611"
   },
   {
     "path": "mid360s_mapping/camera/开始相机Line2触发测试.cmd",
-    "bytes": 130,
-    "sha256": "038c765b83bc2019c5f24712c8458cef30e2ce84caf981b900445143b194eb64"
+    "bytes": 148,
+    "sha256": "24376b3cc800f3a82a94b2a6b6692290a4edd210bed039d54da1d87c2a823653"
   },
   {
     "path": "mid360s_mapping/check-offline.sh",
@@ -475,6 +535,221 @@
     "sha256": "aac7eafc63267bd27f1658f1af6f6c6070036912c241af05aacfd78c8e5bbfa7"
   },
   {
+    "path": "mid360s_mapping/stm32/joint-sync-test/build.ps1",
+    "bytes": 1556,
+    "sha256": "e9846eace151940594363e8e10c9792de31e10e15d1bd0f58baf6ed1d8f60a1f"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/flash.sct",
+    "bytes": 223,
+    "sha256": "53e86e1e4a1313fc99287e857556e897b52ac8a3f1e3bbf8419850a11b468c71"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/joint-sync-test.uvprojx",
+    "bytes": 15686,
+    "sha256": "966a585c15035829940079f38a97674982635b23da32c668203374c53da4f551"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/main.c",
+    "bytes": 7896,
+    "sha256": "14372d36beb7b5eb5d5c099460b52304233df8c19fc94fcb4a5eee8196130463"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/README.txt",
+    "bytes": 2965,
+    "sha256": "cadb7c09892aaefd8c5ba05064616082a0dda273abc2e06ece75f476ab97a045"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/rmc.c",
+    "bytes": 1222,
+    "sha256": "4f8962dd64316350d797f566f7e5aa4c620eb3aca37c225562f193e18992c37d"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/rmc.h",
+    "bytes": 159,
+    "sha256": "406ec4d6b4e8d656cd31c99af6e365b52a249be9c7872ed35cf44b477740a0c4"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/RTE/Device/STM32F103C8/STM32F101_102_103_105_107.dbgconf",
+    "bytes": 2403,
+    "sha256": "e8e0a727328839728e29631f7bc97913f0dc214e1415960551216e89cb9d77b6"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/RTE/Device/STM32F103C8/STM32F101_102_103_105_107.dbgconf.base@1.0.0",
+    "bytes": 2403,
+    "sha256": "e8e0a727328839728e29631f7bc97913f0dc214e1415960551216e89cb9d77b6"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/inc/core_cm3.h",
+    "bytes": 83896,
+    "sha256": "4136ac10b288b55f1c13337faafeb323d1da4ddc93da09ee81bf29584941fafd"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/inc/misc.h",
+    "bytes": 8762,
+    "sha256": "92b8e9ce063e57a3b6f35768c58f16df53ef31e2436fb23f477d495c9b4d59b6"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/inc/stm32f10x.h",
+    "bytes": 625605,
+    "sha256": "f01962c29e9f493e662c4e33732b42719381dc5b61c8ebdd08221f4f480df851"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/inc/stm32f10x_adc.h",
+    "bytes": 21207,
+    "sha256": "7a6981a638c81e1b38ea75157d7e980d5b06b8dd25b23d0ab4dd532a5a07e66b"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/inc/stm32f10x_bkp.h",
+    "bytes": 7360,
+    "sha256": "bf982e45796135f3ef5a1b5560d514f79649491c6e52dce4c8f743d1b60508ec"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/inc/stm32f10x_can.h",
+    "bytes": 26862,
+    "sha256": "b01998c5430917682c4d27d5513d9ed8528e444310efeca53ee087c456ce9082"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/inc/stm32f10x_cec.h",
+    "bytes": 6363,
+    "sha256": "dce46df3d79a6a6006c1ee90ad0b83f8edf93da904a1c18863969cafedb8747a"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/inc/stm32f10x_conf.h",
+    "bytes": 3159,
+    "sha256": "1ab04722bab41b7771556f9f6932d096f6b3924705f37d31bdf4d86c81d2eda3"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/inc/stm32f10x_crc.h",
+    "bytes": 2068,
+    "sha256": "6dd4e3f6f3eed4b54da76ee5504b37e5503fbfed2f1509cf671d2c68332dbc43"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/inc/stm32f10x_dac.h",
+    "bytes": 14916,
+    "sha256": "ae78205b38516a8ebaa25441033a42e1affbdc28e795e7c30e44cc80e867fe62"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/inc/stm32f10x_dbgmcu.h",
+    "bytes": 3699,
+    "sha256": "1641529f8f91f6be54a02f751004319c270edb81e8fffc34bc69345d4a79a83c"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/inc/stm32f10x_dma.h",
+    "bytes": 20315,
+    "sha256": "a956ef05e713e4da2276331f6a224bc67391052a679c83ed05de652b96e60314"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/inc/stm32f10x_exti.h",
+    "bytes": 6640,
+    "sha256": "0877f2fd902a4a99446653d88b17668c78ed476c1229ab459137d728df6f8d62"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/inc/stm32f10x_flash.h",
+    "bytes": 25019,
+    "sha256": "c55e942c837b1aa592485e80fbd9080482f1f125b68add3074aba2be782ed50e"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/inc/stm32f10x_fsmc.h",
+    "bytes": 26283,
+    "sha256": "34ea6aae20d02d18e357fc5f26890f6bacefd85b70c0107af82ed83c67742e02"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/inc/stm32f10x_gpio.h",
+    "bytes": 19790,
+    "sha256": "8aa88edb0ec620ae0f70ad44e7fca97cd399e0c24079a63601069ee4a2845b7d"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/inc/stm32f10x_i2c.h",
+    "bytes": 29345,
+    "sha256": "023a827b85a593be57662e2d750355a2ebc7185d699ae3f45ea033379c0afee3"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/inc/stm32f10x_iwdg.h",
+    "bytes": 3688,
+    "sha256": "5754d0a80db3759bedd8e1f992206fda210e3f31781eb8ae2bfefed26557333e"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/inc/stm32f10x_pwr.h",
+    "bytes": 4227,
+    "sha256": "756847dd3323b668a67c3ebe18258898dff89d741acbf7cea4d581f5cdc35304"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/inc/stm32f10x_rcc.h",
+    "bytes": 29725,
+    "sha256": "eb9a2dd627aade67e937994e03214fa483e8a7d8fb1dfad0ab578105ecdbb9d6"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/inc/stm32f10x_rtc.h",
+    "bytes": 3722,
+    "sha256": "2ade7c0f0e31fc6bd4d2f6216575d6165f99d9aec7039fad15c053d7e2a14fed"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/inc/stm32f10x_sdio.h",
+    "bytes": 21332,
+    "sha256": "bad0a129a06ed6025f81247be5a7a6d63bf9c6a1661503a250994d17728d964b"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/inc/stm32f10x_spi.h",
+    "bytes": 17238,
+    "sha256": "c883213466b5aa203fcb22599454e60742a8c6406d52fbf0a9497717be7e3ebd"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/inc/stm32f10x_tim.h",
+    "bytes": 51263,
+    "sha256": "9128c2fd5c15c76e4165dcab17099c5ee85d495ed63584f5f8217bd99b1c6c56"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/inc/stm32f10x_usart.h",
+    "bytes": 16136,
+    "sha256": "0c8ea6438ee37c44d263f7e861d4d45687d35bf7a99430b24bb4a0d9b0f52bb9"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/inc/stm32f10x_wwdg.h",
+    "bytes": 2851,
+    "sha256": "e70993561d77cf26f95ee1e1227bb13486d9835639939f4a3aa96dfa218a5179"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/inc/system_stm32f10x.h",
+    "bytes": 1987,
+    "sha256": "bf3a85d4a7044b8ec73af05869a5ba06fbea659b1537f4eb76d5c7083c90fb41"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/src/misc.c",
+    "bytes": 6821,
+    "sha256": "7c578133f5ab63c74d7e53ac2f66ff7ca13e25a7c5a99a3d565139e2a78e06a8"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/src/startup_stm32f10x_hd.s",
+    "bytes": 12079,
+    "sha256": "e8a8295c43e7e49914d1800530aac8eca4d8405cbf3cf423087ac143192982d3"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/src/stm32f10x_gpio.c",
+    "bytes": 22571,
+    "sha256": "a213ab5d04370c0f90f4c3dd89bf03beacca88840d97631ef7c41a52daf50b22"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/src/stm32f10x_rcc.c",
+    "bytes": 49801,
+    "sha256": "9abe325c0633c20a3d2c30f6751a8820fa37d97465b8588ad10f6855660389a5"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/src/stm32f10x_tim.c",
+    "bytes": 106269,
+    "sha256": "75d7a2e4e58d70ea0692b3f2b0e77d194961bd5b0b131317f4ead3e0a72f6e0e"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/src/stm32f10x_usart.c",
+    "bytes": 37250,
+    "sha256": "fb19efc599697911e459a44363e3ba373928650a8eaba46f7f48df6546a266fb"
+  },
+  {
+    "path": "mid360s_mapping/stm32/joint-sync-test/vendor/src/system_stm32f10x.c",
+    "bytes": 35483,
+    "sha256": "aac7eafc63267bd27f1658f1af6f6c6070036912c241af05aacfd78c8e5bbfa7"
+  },
+  {
     "path": "mid360s_mapping/stm32/lidar-pps-uart/.gitignore",
     "bytes": 65,
     "sha256": "3bda342b058db0e549d260459366a2fe1b67007430d2de0d5370e6cf2b08e1c1"
@@ -720,9 +995,39 @@
     "sha256": "0469b7c2aa33b4b4152f6ff572bfc67c7bd6d6d395bdc74054f306f66815d51b"
   },
   {
+    "path": "mid360s_mapping/sync-test/inspect_packet_headers.py",
+    "bytes": 1785,
+    "sha256": "ae8bcb9b2629ddc4fba5ac2e78fdeb11705313057e77a72d98dd283605e90965"
+  },
+  {
+    "path": "mid360s_mapping/sync-test/joint_camera.py",
+    "bytes": 5653,
+    "sha256": "4a6a71105e5488a9a01bd4e18b3827ea645af206b1503b72a248356466e97579"
+  },
+  {
+    "path": "mid360s_mapping/sync-test/joint_mcu.py",
+    "bytes": 3647,
+    "sha256": "50e3d2a21f1846b89e77853576da235886a3edd4fee71dd7cbbcd338e10d2326"
+  },
+  {
+    "path": "mid360s_mapping/sync-test/joint_test.py",
+    "bytes": 7608,
+    "sha256": "a2e76db353105f19868937a9244b910ea139640801dfe3e2e8180ebba5ecedb0"
+  },
+  {
     "path": "mid360s_mapping/sync-test/livox_wire.py",
-    "bytes": 5059,
-    "sha256": "986dea011ea85540c345e8b7c59ca7b88b3afea4692b2743171fbd4160a25dce"
+    "bytes": 5552,
+    "sha256": "36de92c0599afbe7ed0885636993783c3c09ac422167c7e243b0a46ba5c2f0b5"
+  },
+  {
+    "path": "mid360s_mapping/sync-test/read_diagnostics.py",
+    "bytes": 1287,
+    "sha256": "2511bc3daed8c006a08ff0b56c87b9dcaf9089fbc7544b1bd6db6e4afdaaddaf"
+  },
+  {
+    "path": "mid360s_mapping/sync-test/requirements-joint.txt",
+    "bytes": 50,
+    "sha256": "0134ba3ec9cacc203cf4ffe863ab097d25385eef2e852e3511f6de04ea7213ce"
   },
   {
     "path": "mid360s_mapping/sync-test/requirements.txt",
@@ -731,8 +1036,8 @@
   },
   {
     "path": "mid360s_mapping/sync-test/run_sync.py",
-    "bytes": 14077,
-    "sha256": "5c4f428002c48bd12cfa028231fb200ffaa92d4ff9a81aa3c2b21d6b67ccb4ea"
+    "bytes": 16493,
+    "sha256": "884b04cb811ba660fac755de423be1e069f4d4f0a5d703ef976e715e25cc1ddb"
   },
   {
     "path": "mid360s_mapping/sync-test/sdk-golden.json",
@@ -750,14 +1055,24 @@
     "sha256": "7ddfd7fe0ddad9b362d3f084aca87e661ce51fd2f3750eb20103364f52d5e298"
   },
   {
+    "path": "mid360s_mapping/sync-test/start-joint.ps1",
+    "bytes": 864,
+    "sha256": "ed319c35ad162d4dea4436c59dc586fa58f4f314f3f6279465cd076a9c301551"
+  },
+  {
     "path": "mid360s_mapping/sync-test/start.ps1",
-    "bytes": 1606,
-    "sha256": "82522b2f596669aaf0e9f6faa7fa3ac2d968859d7d6f1673e92be2563a33e306"
+    "bytes": 2073,
+    "sha256": "c5ccea2b0e78f28c51b5a2dda92afc6f7fa4648e8817ca663de9d4220df74166"
+  },
+  {
+    "path": "mid360s_mapping/sync-test/test_joint.py",
+    "bytes": 1458,
+    "sha256": "778eb0fc9922a1f27157edad1235bcba1344a529f2a63bfef1e9e7d127c6cfdc"
   },
   {
     "path": "mid360s_mapping/sync-test/test_sync.py",
-    "bytes": 8101,
-    "sha256": "ce95d4376c64344fcead4c945afb7facf9c7566ca34a2e51bec9665f5fa4b00d"
+    "bytes": 9569,
+    "sha256": "27b54f832eb8c3f9399f16ff3681697dc6cde0352ffc57d02bf2b3f19dcac8bb"
   },
   {
     "path": "mid360s_mapping/sync-test/validation-20261123.log",
@@ -771,13 +1086,23 @@
   },
   {
     "path": "mid360s_mapping/sync-test/开始雷达同步测试.cmd",
-    "bytes": 85,
-    "sha256": "3fa7964dede65bd7d75026272e25f4362a3c540386a640799394123be32327d9"
+    "bytes": 142,
+    "sha256": "c1cd23a7f387592329a57be06d647c2fc6733e307fd4148f44e26f13018bd6fa"
   },
   {
     "path": "mid360s_mapping/sync-test/硬件触发测试步骤-20261123.txt",
-    "bytes": 7027,
-    "sha256": "7d41fa4c58497c82f306c9b776090dc6803c0f211a723718ad9f0fa04cd29a44"
+    "bytes": 7840,
+    "sha256": "f5de1c8948f7fab3907b690ecf270a97271795768b767c639b572908d2a1b700"
+  },
+  {
+    "path": "mid360s_mapping/sync-test/联合硬件触发验收-20261123.txt",
+    "bytes": 4067,
+    "sha256": "cc67c0de048cc6a6d690356270f9b69a14d179b4886dc5471fd93de1de214031"
+  },
+  {
+    "path": "mid360s_mapping/sync-test/雷达同步复测-20261123-1738.txt",
+    "bytes": 2545,
+    "sha256": "670dc999d5c5b9cdc2b7a879244a19545bce4f4ef0baf607433bd5a4104eb85e"
   },
   {
     "path": "mid360s_mapping/test_driver_clock.py",
@@ -851,8 +1176,8 @@
   },
   {
     "path": "README.md",
-    "bytes": 2945,
-    "sha256": "bb1f78d87b89d91fb431d71fb4ec460f2d9090cc122f3629bf2c4894d3742ed5"
+    "bytes": 3351,
+    "sha256": "eb4b99e66a6c7a16724b5a7fc766dfbf06f7301a1126efb1b9634c24c83c6a97"
   },
   {
     "path": "wsl/mid360s_lio/sdk/.gitignore",

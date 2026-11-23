@@ -98,7 +98,16 @@ class Cadence:
 def decode_data_header(packet):
     if len(packet)<36 or packet[0]!=0 or struct.unpack_from('<H',packet,1)[0]!=len(packet):
         raise ValueError('invalid point/IMU packet length/version')
-    if struct.unpack_from('<I',packet,24)[0]!=binascii.crc32(packet[28:]):
+    dtype=packet[10]
+    sizes={0:24,1:14,2:8,3:10}
+    count=struct.unpack_from('<H',packet,5)[0]
+    if dtype not in sizes or count==0 or len(packet)!=36+count*sizes[dtype]:
+        raise ValueError('point/IMU sample count or payload size mismatch')
+    stored=struct.unpack_from('<I',packet,24)[0]
+    verified=stored==binascii.crc32(packet[28:])
+    # Observed Mid-360S point packets carry zero here. This is NOT proof of
+    # integrity or a claim that the protocol defines zero as disabling CRC.
+    if not verified and not (dtype in (1,2,3) and stored==0):
         raise ValueError('point/IMU timestamp and data CRC mismatch')
     # Official timestamp is at byte 28, after CRC32 at byte 24.
-    return packet[10],packet[11],struct.unpack_from('<Q',packet,28)[0]
+    return dtype,packet[11],struct.unpack_from('<Q',packet,28)[0],verified

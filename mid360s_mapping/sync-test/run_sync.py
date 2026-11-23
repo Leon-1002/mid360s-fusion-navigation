@@ -52,9 +52,36 @@ class Network:
         if len(response)!=3 or response[0]!=0: raise RuntimeError('stream configuration rejected: '+response.hex())
     def close(self): self.sock.close()
 
+def stream_stats():
+    return {'packets':0,'gps_packets':0,'regressions':0,'wrong_epoch':0,
+            'invalid':0,'crc_verified':0,'crc_unavailable':0,'non_gps':0,
+            'last_gps_ns':None,'last_gps_host_monotonic':None,'types':Counter()}
+
+def count_packet(st,packet,kind,epoch,now):
+    try: dtype,ttype,stamp,verified=decode_data_header(packet)
+    except ValueError: st['invalid']+=1; return
+    if (kind=='imu' and dtype!=0) or (kind=='lidar' and dtype not in (1,2,3)):
+        st['invalid']+=1; return
+    st['packets']+=1; st['types'][ttype]+=1
+    st['crc_verified' if verified else 'crc_unavailable']+=1
+    if ttype!=2: st['non_gps']+=1
+    if ttype==2 and epoch is not None:
+        st['gps_packets']+=1
+        st['last_gps_host_monotonic']=now
+        previous=st['last_gps_ns']
+        if previous is not None and stamp<previous: st['regressions']+=1
+        if not (epoch-2)*10**9<=stamp<=(epoch+2)*10**9: st['wrong_epoch']+=1
+        st['last_gps_ns']=stamp
+
+def timing_data_ok(stats,now):
+    return all(s['gps_packets']>=100 and all(s[k]==0 for k in
+               ('regressions','wrong_epoch','invalid','non_gps'))
+               and s['last_gps_host_monotonic'] is not None
+               and now-s['last_gps_host_monotonic']<1 for s in stats.values())
+
 class DataMonitor:
     def __init__(self,host,lidar):
-        self.lidar=lidar; self.sockets=[]; self.stats={}
+        self.lidar=lidar; self.sockets=[]; self.stats={}; self.steady=None
         try:
             for port,kind in [(56301,'lidar'),(56401,'imu')]:
                 sock=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
@@ -63,9 +90,7 @@ class DataMonitor:
                     sock.setsockopt(socket.SOL_SOCKET,socket.SO_EXCLUSIVEADDRUSE,1)
                 sock.setsockopt(socket.SOL_SOCKET,socket.SO_RCVBUF,4*1024*1024)
                 sock.bind((host,port)); sock.setblocking(False)
-                self.stats[kind]={'packets':0,'gps_packets':0,'regressions':0,
-                                  'wrong_epoch':0,'invalid':0,'last_gps_ns':None,
-                                  'last_gps_host_monotonic':None,'types':Counter()}
+                self.stats[kind]=stream_stats()
         except BaseException:
             self.close(); raise
     def poll(self,epoch=None):
@@ -74,19 +99,10 @@ class DataMonitor:
                 try: packet,addr=sock.recvfrom(65535)
                 except BlockingIOError: break
                 if addr[0]!=self.lidar: continue
-                st=self.stats[kind]
-                try: dtype,ttype,stamp=decode_data_header(packet)
-                except ValueError: st['invalid']+=1; continue
-                if (kind=='imu' and dtype!=0) or (kind=='lidar' and dtype not in (1,2,3)):
-                    st['invalid']+=1; continue
-                st['packets']+=1; st['types'][ttype]+=1
-                if ttype==2 and epoch is not None:
-                    st['gps_packets']+=1
-                    st['last_gps_host_monotonic']=time.monotonic()
-                    previous=st['last_gps_ns']
-                    if previous is not None and stamp<previous: st['regressions']+=1
-                    if not (epoch-2)*10**9<=stamp<=(epoch+2)*10**9: st['wrong_epoch']+=1
-                    st['last_gps_ns']=stamp
+                now=time.monotonic()
+                count_packet(self.stats[kind],packet,kind,epoch,now)
+                if self.steady is not None:
+                    count_packet(self.steady[kind],packet,kind,epoch,now)
     def close(self):
         for sock,_ in self.sockets: sock.close()
 
@@ -104,10 +120,13 @@ def execute(args,emit,summary):
     cadence=Cadence(); start=time.monotonic(); buffer=bytearray()
     consecutive_status=0; last_matched_sync=None; last_query=0
     last_epoch=None; last_rmc_rx=None; last_report=0
+    steady_start=None; settled_count=0; steady_status_errors=0
     try:
         if args.mode!='serial':
             net=Network(args.host,args.lidar)
             initial=net.status(); emit('initial_status',**initial)
+            if args.mode=='sync' and initial.get('work_state') not in (1,2,9):
+                raise RuntimeError('Radar not in a normal stable state (work_state='+str(initial.get('work_state'))+'); no time/configuration command sent. Check diagnostics first.')
             if initial.get('sync_type')==1 and args.mode=='sync':
                 raise RuntimeError('Radar uses PTP; GPS has lower priority. Stop PTP source before this test.')
             if args.mode=='probe':
@@ -175,7 +194,20 @@ def execute(args,emit,summary):
                 elif not matched:
                     consecutive_status=0
                 summary['matched_status_count']=consecutive_status
-                emit('radar_status',matched_current_pps=matched,**status)
+                settled=(matched and status.get('work_state')==1 and
+                         last_epoch*10**9<=status.get('local_time_ns',0)<(last_epoch+1)*10**9)
+                settled_count=settled_count+1 if settled else 0
+                if steady_start is not None and not settled: steady_status_errors+=1
+                if steady_start is None and settled_count>=2:
+                    # Drain queued transition packets into the retained total counters.
+                    monitor.poll(last_epoch)
+                    monitor.steady={kind:stream_stats() for kind in monitor.stats}
+                    steady_start=time.monotonic()
+                    emit('steady_window_started',acquisition_seconds=round(steady_start-start,3),
+                         minimum_steady_seconds=10,total_before_steady=monitor.stats)
+                emit('radar_status',matched_current_pps=matched,clock_settled=settled,**status)
+            if net and steady_start is None and time.monotonic()-start>15:
+                raise RuntimeError('Radar clock did not converge within 15 seconds')
             if now-last_report>=5:
                 last_report=now
                 emit('progress',rmc=summary['rmc_count'],acks=summary['time_command_acks'],matched_status=consecutive_status)
@@ -186,14 +218,20 @@ def execute(args,emit,summary):
             monitor.poll(last_epoch)
             summary['data']=monitor.stats
             basic=consecutive_status>=10 and summary['time_command_acks']>=10
-            data_ok=all(s['gps_packets']>=100 and s['regressions']==0 and s['wrong_epoch']==0 and s['invalid']==0
-                        and s['last_gps_host_monotonic'] is not None
-                        and time.monotonic()-s['last_gps_host_monotonic']<1.0
-                        for s in monitor.stats.values())
-            summary['result']='BENCH_SYNC_PASS' if basic and data_ok else ('STATUS_PASS_DATA_PENDING' if basic else 'INCOMPLETE_SYNC')
+            duration=0 if steady_start is None else time.monotonic()-steady_start
+            summary['steady_seconds']=round(duration,3)
+            summary['steady_status_errors']=steady_status_errors
+            data_ok=(monitor.steady is not None and duration>=10 and steady_status_errors==0
+                     and timing_data_ok(monitor.steady,time.monotonic()))
+            summary['result']='STATUS_PASS_DATA_PENDING' if basic else 'INCOMPLETE_SYNC'
+            if basic and data_ok:
+                unavailable=any(s['crc_unavailable'] for s in monitor.steady.values())
+                summary['result']='TIMING_PASS_CRC_UNAVAILABLE' if unavailable else 'BENCH_SYNC_PASS'
+                summary['payload_integrity_verified']=not unavailable
     finally:
         if monitor:
             summary['data']=monitor.stats
+            summary['steady_data']=monitor.steady
         if ser: ser.close()
         if net:
             try:
@@ -247,6 +285,9 @@ def main():
             (folder/'summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding='utf-8')
             emit('summary',**summary)
     print('Report:',folder)
+    if summary['result']=='TIMING_PASS_CRC_UNAVAILABLE':
+        print('Timing checks passed; point payload CRC is unavailable. Full integrity acceptance remains pending.')
+        return 3
     return 0 if summary['result'] in ('SERIAL_PASS','NETWORK_QUERY_PASS','BENCH_SYNC_PASS') else 2
 
 if __name__=='__main__': raise SystemExit(main())

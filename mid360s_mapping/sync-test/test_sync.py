@@ -9,7 +9,7 @@ import unittest
 from unittest.mock import patch
 from pathlib import Path
 from livox_wire import *
-from run_sync import Network,DataMonitor,execute
+from run_sync import Network,DataMonitor,execute,stream_stats,count_packet,timing_data_ok
 
 def rmc(body):
     checksum=0
@@ -17,9 +17,10 @@ def rmc(body):
     return f'${body}*{checksum:02X}\r\n'.encode()
 
 def data_packet(dtype,epoch):
-    body=struct.pack('<Q',epoch)+b'\0'*24
+    body=struct.pack('<Q',epoch)+b'\0'*{0:24,1:14,2:8,3:10}[dtype]
     packet=bytearray(28)
     struct.pack_into('<H',packet,1,28+len(body))
+    struct.pack_into('<H',packet,5,1)
     packet[10]=dtype; packet[11]=2
     struct.pack_into('<I',packet,24,binascii.crc32(body))
     return bytes(packet)+body
@@ -60,9 +61,35 @@ class SyncTests(unittest.TestCase):
             with self.assertRaises(ValueError): parse_status(bad)
     def test_data_crc(self):
         packet=data_packet(0,1795392000*10**9)
-        self.assertEqual(decode_data_header(packet),(0,2,1795392000*10**9))
+        self.assertEqual(decode_data_header(packet),(0,2,1795392000*10**9,True))
         bad=bytearray(packet); bad[28]^=1
         with self.assertRaises(ValueError): decode_data_header(bad)
+    def test_zero_crc_is_unverified_not_integrity_pass(self):
+        for dtype in (0,1,2,3):
+            packet=bytearray(data_packet(dtype,1795392000*10**9))
+            packet[24:28]=b'\0'*4
+            if dtype==0:
+                with self.assertRaises(ValueError): decode_data_header(packet)
+            else:
+                self.assertFalse(decode_data_header(packet)[3])
+                packet[24]=1
+                with self.assertRaises(ValueError): decode_data_header(packet)
+        packet=bytearray(data_packet(1,1795392000*10**9))
+        packet[5]=2
+        with self.assertRaises(ValueError): decode_data_header(packet)
+    def test_transition_retained_and_steady_faults_fail(self):
+        epoch=1795392000; total=stream_stats(); steady=stream_stats()
+        count_packet(total,data_packet(0,90000000000),'imu',epoch,1)
+        for i in range(101):
+            packet=data_packet(0,epoch*10**9+i)
+            count_packet(total,packet,'imu',epoch,2)
+            count_packet(steady,packet,'imu',epoch,2)
+        self.assertEqual(total['wrong_epoch'],1)
+        self.assertTrue(timing_data_ok({'imu':steady},2))
+        count_packet(steady,data_packet(0,90000000000),'imu',epoch,2)
+        self.assertFalse(timing_data_ok({'imu':steady},2))
+        self.assertEqual(steady['regressions'],1)
+        self.assertEqual(steady['wrong_epoch'],1)
     def test_configuration_allowlist(self):
         self.assertEqual(stream_config_payload(0x001C,b'\x01'),bytes.fromhex('010000001c00010001'))
         for key,value in [(0x0004,b'\0'*12),(0x0026,b'\x01'),(0x001C,b'\0\0')]:

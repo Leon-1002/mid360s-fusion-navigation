@@ -1,0 +1,77 @@
+{
+  "mode": "sync",
+  "synthetic_time": true,
+  "real_utc_valid": false,
+  "rmc_count": 60,
+  "time_command_acks": 58,
+  "matched_status_count": 58,
+  "result": "TIMING_PASS_CRC_UNAVAILABLE",
+  "data": {
+    "lidar": {
+      "packets": 125024,
+      "gps_packets": 124128,
+      "regressions": 0,
+      "wrong_epoch": 0,
+      "invalid": 0,
+      "crc_verified": 0,
+      "crc_unavailable": 125024,
+      "non_gps": 0,
+      "last_gps_ns": 1795393144625197340,
+      "last_gps_host_monotonic": 31323.171,
+      "types": {
+        "2": 125024
+      }
+    },
+    "imu": {
+      "packets": 12001,
+      "gps_packets": 11915,
+      "regressions": 0,
+      "wrong_epoch": 0,
+      "invalid": 0,
+      "crc_verified": 12001,
+      "crc_unavailable": 0,
+      "non_gps": 0,
+      "last_gps_ns": 1795393144622367040,
+      "last_gps_host_monotonic": 31323.171,
+      "types": {
+        "2": 12001
+      }
+    }
+  },
+  "steady_seconds": 56.453,
+  "steady_status_errors": 0,
+  "payload_integrity_verified": false,
+  "steady_data": {
+    "lidar": {
+      "packets": 117609,
+      "gps_packets": 117609,
+      "regressions": 0,
+      "wrong_epoch": 0,
+      "invalid": 0,
+      "crc_verified": 0,
+      "crc_unavailable": 117609,
+      "non_gps": 0,
+      "last_gps_ns": 1795393144625197340,
+      "last_gps_host_monotonic": 31323.171,
+      "types": {
+        "2": 117609
+      }
+    },
+    "imu": {
+      "packets": 11290,
+      "gps_packets": 11290,
+      "regressions": 0,
+      "wrong_epoch": 0,
+      "invalid": 0,
+      "crc_verified": 11290,
+      "crc_unavailable": 0,
+      "non_gps": 0,
+      "last_gps_ns": 1795393144622367040,
+      "last_gps_host_monotonic": 31323.171,
+      "types": {
+        "2": 11290
+      }
+    }
+  },
+  "restore_errors": []
+}

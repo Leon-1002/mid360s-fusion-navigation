@@ -84,6 +84,11 @@
                    都有至少百个 GPS 类型数据包，CRC 合格、无所观测到的倒退、秒值范围匹配。
                    这是台架数据链路验收，不是微秒级相位精度或真实 UTC 的认证。
    STATUS_PASS_DATA_PENDING：同步状态有证据，但点云/IMU证据不足，不能算整体通过。
+   TIMING_PASS_CRC_UNAVAILABLE：稳定窗口的时间检查通过，但本机点云 CRC 字段为零且不匹配计算值，
+                   无法证明点云载荷完整性；不是 BENCH_SYNC_PASS。退出码 3 为此限制结果。
+   首次校时允许最多 15 秒收敛；连续两次状态、当前秒值及本地时钟匹配后开始稳定窗口。
+   稳定窗口至少 10 秒，默认 60 秒测试会获得更长窗口。总计 data 保留启动阶段异常，
+   steady_data 单独统计稳定阶段；稳定阶段不允许时间倒退、秒值异常、非 GPS 类型或无效包。
    FAILED / INCOMPLETE / RESTORE_FAILED：按日志继续定位，不降低验收标准。
    所有结果在 sync-test\sessions\日期时间\summary.json 和 events.jsonl。
 
@@ -99,7 +104,9 @@
 - Python 串口依赖安装在 sync-test\.venv；没有修改全局 Python 环境。
 - 秒值转发按 SDK2 官方协议实现；实际 SDK2 C++ 生成包与 Python 包逐字节一致。
 - Keil 固件构建通过；RMC 日期/闰年/校验测试通过；本地模拟串口+UDP完整流程与配置恢复测试通过。
-- 本次尚未烧录新固件，尚未获得真实雷达同步或相机触发帧；设备接好后才能实测。
+- 17:38 更新：雷达专用固件已运行，60 秒实测得到 TIMING_PASS_CRC_UNAVAILABLE，
+  稳定窗口 56.453 秒时间检查通过，点云 CRC 无法验证；详见 雷达同步复测-20261123-1738.txt。
+  相机单次 10 脉冲对应 10 帧由用户在 MV Viewer 确认；相机与雷达联合同步仍待验证。
 - 本轮先分别验收，再合并相机与 PPS 固件，验证相位及统一时间戳。不要把不同固件混用。
 
 依据：原作 https://github.com/xuankuzcr/LIV_handhold

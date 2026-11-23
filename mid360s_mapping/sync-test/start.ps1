@@ -1,12 +1,18 @@
 param(
     [ValidateSet('menu','serial','probe','sync')][string]$Mode='menu',
     [string]$Port='',
-    [int]$Seconds=60
+    [int]$Seconds=60,
+    [switch]$CheckOnly
 )
 $ErrorActionPreference='Stop'
 Set-Location -LiteralPath $PSScriptRoot
 $python=Join-Path $PSScriptRoot '.venv\Scripts\python.exe'
 if (-not (Test-Path -LiteralPath $python)) { throw 'Run setup.ps1 first.' }
+if ($CheckOnly) {
+    & $python -c "import serial; import livox_wire; print('PASS: radar CMD -> Windows PowerShell -> Python dependencies. No device accessed.')"
+    if ($LASTEXITCODE -ne 0) { throw 'Dependency check failed.' }
+    exit 0
+}
 if ($Mode -eq 'menu') {
     Write-Host '1. Serial test only (no network writes)'
     Write-Host '2. Radar network/status query only'
@@ -27,4 +33,8 @@ if ($Mode -ne 'serial') {
 $arguments=@('run_sync.py','--mode',$Mode,'--seconds',"$Seconds")
 if ($Port) { $arguments+=@('--port',$Port) }
 & $python @arguments
+if ($LASTEXITCODE -eq 3) {
+    Write-Warning 'Timing checks passed, but point payload CRC is unavailable. This is a limited timing result, not full integrity acceptance. See summary.json.'
+    exit 3
+}
 if ($LASTEXITCODE -ne 0) { throw 'Test incomplete or failed. See the printed sessions directory; do not treat as synchronized.' }
