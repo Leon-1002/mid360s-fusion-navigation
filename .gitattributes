@@ -1,5 +1,2 @@
-* text=auto
-*.sh text eol=lf
-*.py text eol=lf
-*.patch text eol=lf
-*.pcd -text
+# Preserve the exact exported bytes for SHA256 validation across platforms.
+* -text
