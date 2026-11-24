@@ -2,6 +2,8 @@
 
 **复刻说明**　本仓库仅记录对上游开源方案的复刻、硬件适配和实测。手持设备与 STM32 同步方案参考郑纯然（Chunran Zheng，GitHub 用户 xuankuzcr）团队公开的 [LIV_handhold](https://github.com/xuankuzcr/LIV_handhold)。视觉融合路线沿用香港大学 MARS 实验室的 [FAST-LIVO2](https://github.com/hku-mars/FAST-LIVO2)，原项目署名开发者为[郑纯然](https://github.com/xuankuzcr)。雷达惯性建图基线来自该实验室的 [FAST-LIO](https://github.com/hku-mars/FAST_LIO)。
 
+[打开实测房间三维地图（无需登录）](https://leon-1002.github.io/mid360s-room-map/)
+
 截至 2026-11-23 的阶段成果归档。设备为 Livox Mid-360S、ZM-3000-60UC 和 STM32F103C8T6；Windows + WSL2 Ubuntu 22.04 + ROS 2 Humble。
 
 ## 已验证和待完成
