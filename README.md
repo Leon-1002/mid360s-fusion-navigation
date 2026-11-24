@@ -1,5 +1,7 @@
 # Mid-360S 融合导航工程
 
+**2026-11-24 · Orin 手持建图**　[启动、录制、停止、保存和生成彩色地图](mid360s_mapping/onboard/Orin手持建图使用说明.md) · [移植 README](mid360s_mapping/onboard/README.md) · [在线查看实测房间地图](https://mid360s-room-y58xd2.xiaomingji1002.chatgpt.site)
+
 截至 2026-11-23 的阶段成果归档。设备为 Livox Mid-360S、ZM-3000-60UC 和 STM32F103C8T6；Windows + WSL2 Ubuntu 22.04 + ROS 2 Humble。
 
 ## 已验证和待完成
