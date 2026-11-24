@@ -380,4 +380,4 @@ bash "$DEPLOY/stop-mapping.sh"
 
 ## 13. 手持全景建图操作
 
-实机采集、停止并保存几何地图、实拍图像上色和浏览器查看的命令见[《Orin 手持建图使用说明》](./Orin手持建图使用说明.md)。[查看 2026-11-24 的房间地图](https://mid360s-room-y58xd2.xiaomingji1002.chatgpt.site)。
+实机采集、停止并保存几何地图、实拍图像上色和浏览器查看的命令见[《Orin 手持建图使用说明》](./Orin手持建图使用说明.md)。[查看 2026-11-24 的房间地图](https://leon-1002.github.io/mid360s-room-map/)。
